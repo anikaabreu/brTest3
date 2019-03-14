@@ -1,6 +1,9 @@
 import Cards from '../collections/Cards';
 import Page from './Page';
 import Home from '../templates/Home.hbs';
+// import Handlebars from 'handlebars';
+// import Image_Partial from '../templates/partials/Image_banner.hbs'; // precompile partial
+// Handlebars.partials['image_partial'] = Image_Partial;
 
 export default Page.extend({
     el: '#app',
@@ -22,7 +25,7 @@ export default Page.extend({
                     self.$el.html(self.template({
 
                     }));
-                    console.log(i, e)
+                    // console.log(i, e)
                 })
             }
         })
