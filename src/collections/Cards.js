@@ -13,7 +13,7 @@ export default Backbone.Collection.extend({
             console.log('fireCards')
             var cruise = new self.model()
             var attrs = Object.assign(e, response.sailings[i]);
-            cruise.set('_id', "cruise" + i);
+            cruise.set('id', "cruise" + i);
             cruise.set(attrs);
             self.add(cruise);
 

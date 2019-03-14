@@ -22,39 +22,54 @@ export default Page.extend({
     var cruiseName = []
     var cruiseShip = []
     var minP = []
+    var one = []
+    var two = []
+    var three = []
+console.log(self.collection.models[0].attributes)
+console.log(self.collection.get("cruise0").attributes)
 
-     self.collection.each((i, e) => {
-         console.log(i)
-         var img = i.attributes.sailing_main_image;
-         var sT = i.attributes.sailing_name;
-         var cS = i.attributes.cruise_ship_name;
-         var cN = i.attributes.cruise_line_name;
-         var mP = i.attributes;
-         var opts = i.attributes.sailing_options
+one.push(self.collection.get("cruise0").attributes);
+two.push(self.collection.get("cruise1").attributes);
+three.push(self.collection.get("cruise2").attributes);
 
 
-         for (var y = 0; y < opts.length; y++) {
-             var pr = opts[y].sailing_price
-             var dy = opts[y].sailing_date
+    //  self.collection.each((i, e) => {
+    //     //  console.log(i.attributes)
+    //      var img = i.attributes.sailing_main_image;
+    //      var sT = i.attributes.sailing_name;
+    //      var cS = i.attributes.cruise_ship_name;
+    //      var cN = i.attributes.cruise_line_name;
+    //      var mP = i.attributes;
+    //      var opts = i.attributes.sailing_options
 
-             day.push(dy)
-             price.push(pr)
 
-         }
-         images.push(img)
-        //  price.push(pr)
-         sailingTitle.push(sT)
-         cruiseName.push(cN)
-         cruiseShip.push(cS)
+    //      for (var y = 0; y < opts.length; y++) {
+    //          var pr = opts[y].sailing_price
+    //          var dy = opts[y].sailing_date
+
+    //          day.push(dy)
+    //          price.push(pr)
+
+    //      }
+    //      images.push(img)
+    //     //  price.push(pr)
+    //      sailingTitle.push(sT)
+    //      cruiseName.push(cN)
+    //      cruiseShip.push(cS)
+
+    //      one.push(i.attributes)
+    //      two.push(i.attributes)
+    //      three.push(i.attributes)
+    //     //  console.log(i)
+    //     //   console.log('1',one)
         
-     })
-     console.log(cruiseName.length)
+    //  })
+    //  console.log(cruiseName.length)
 
      self.$el.html(self.template({
-        line: cruiseName,
-        img: images,
-        day: day,
-        price: price,
+        one: one,
+        two: two,
+        three: three
 
      }));
 
