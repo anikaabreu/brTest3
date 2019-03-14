@@ -1,19 +1,32 @@
 <main class="container" id="home-page">
-	<div id="cruise-card-header">
-            <span id="cruise-card-title">
-                Choose Your Sailings
-            </span>
-            <span id="cruise-card-sub-header">
+    <div id="cruise-card-header">
+        <span id="cruise-card-title">
+            Choose Your Sailings
+        </span>
+        <span id="cruise-card-sub-header">
             (Pick one for each box)
-            </span>
-        </div>
-        <div id="cruise-card-wrapper">
-            <div id="cruise-card-container">
-													{{> partials/Image_banner}}
-														{{> partials/Titles}}
-														{{> partials/Radiobtn}}
-												</div>
-        </div>
-									{{> partials/Footer}}
-  </main> 
+        </span>
+    </div>
+  
+    <div id="cruise-card-wrapper">
+        {{#each this }}
+        <div id="cruise-card-container">
+           <div id="cruise-banner-img">
+         
+            {{../day}}
+            {{> partials/Radiobtn }}
  
+           </div>
+            <div id="container-bod-article-body">
+                {{> partials/Titles}}
+            </div>
+            <div id="radioBtn-wrapper">
+            {{!-- {{> partials/Radiobtn }}  --}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <div id="footer-wrapper">
+        {{> partials/Footer}}
+    </div>
+</main>

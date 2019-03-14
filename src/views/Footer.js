@@ -1,11 +1,11 @@
-import Page from './Page';
+import Footer from '../templates/partials/Footer.hbs';
 
-export default Page.extend({
 
-    // // template: About,
-
-    // render() {
-    //   this.$el.html(this.template());
-    // }
+export default Backbone.View.extend({
+     el: '#footer-wrapper',
+     template: Footer,
+     render() {
+      this.$el.html(this.template());
+    }
 
 });

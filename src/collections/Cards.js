@@ -10,7 +10,7 @@ export default Backbone.Collection.extend({
         var loop = response.cruise_lines
 
         $(loop).each((i, e) => {
-
+            console.log('fireCards')
             var cruise = new self.model()
             var attrs = Object.assign(e, response.sailings[i]);
             cruise.set('_id', "cruise" + i);

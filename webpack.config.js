@@ -57,7 +57,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Revelex Coding Test in Backbonejs',
+            title: 'Latest',
             template: 'src/index.hbs',
         }),
         new ExtractTextPlugin({
