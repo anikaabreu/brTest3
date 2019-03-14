@@ -25,6 +25,7 @@ export default Page.extend({
     var one = []
     var two = []
     var three = []
+    
 console.log(self.collection.models[0].attributes)
 console.log(self.collection.get("cruise0").attributes)
 
