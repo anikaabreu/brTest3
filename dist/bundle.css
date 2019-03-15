@@ -15,18 +15,8 @@ body {
   background: white;
   width: 30%; }
 
-body {
-  height: 100vh;
-  width: 100vw;
-  background-color: #d6d6d6; }
-
-#container {
-  background-color: turquoise;
-  color: black;
-  margin: auto;
-  padding: 0;
-  width: 100vw;
-  font-family: 'Lato', sans-serif; }
+#cruise-card-container img {
+  width: 100%; }
 
 /*// HEADER////////////////////////////////////*/
 #cruise-card-header {
@@ -73,7 +63,7 @@ body {
   -ms-flex-direction: row;
   flex-direction: row; }
 
-article #container-bod-article .tile {
+.cruise-card-container article #container-bod-article .tile {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -130,12 +120,22 @@ ul {
   padding: 0; }
 
 /*RIBBON////////////////////////////////////////*/
+#container-banner-image {
+  width: 100%; }
+
+#container-bod-ribbon-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+
 #container-bod-ribbon-container {
   color: black;
   position: relative;
-  top: 50px;
-  width: 50%;
-  font-size: 18px;
+  width: 33%;
+  font-size: .8vw;
   z-index: 100;
   line-height: 8px; }
 
@@ -167,6 +167,8 @@ ul {
   background: #ff9900;
   overflow: visible;
   height: 49px;
+  left: 9%;
+  top: 54%;
   color: black;
   text-decoration: none;
   font-family: inherit; }

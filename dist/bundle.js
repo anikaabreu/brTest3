@@ -12777,23 +12777,20 @@ return jQuery;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_jquery__);
 
 
-
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_backbone___default.a.Collection.extend({
-
-    url: 'https://api.myjson.com/bins/2gr36',
-    parse: function (response) {
-        var self = this;
-        var loop = response.cruise_lines;
-
-        __WEBPACK_IMPORTED_MODULE_1_jquery___default()(loop).each((i, e) => {
-            var cruise = new self.model();
-            var attrs = Object.assign(e, response.sailings[i]);
-            cruise.set('id', "cruise" + i);
-            cruise.set(attrs);
-            self.add(cruise);
-        });
-        return self.models;
-    }
+  url: 'https://api.myjson.com/bins/2gr36',
+  parse: function (response) {
+    var self = this;
+    var loop = response.cruise_lines;
+    __WEBPACK_IMPORTED_MODULE_1_jquery___default()(loop).each((i, e) => {
+      var cruise = new self.model();
+      var attrs = Object.assign(e, response.sailings[i]);
+      cruise.set('id', "cruise" + i);
+      cruise.set(attrs);
+      self.add(cruise);
+    });
+    return self.models;
+  }
 }));
 
 /***/ }),
@@ -12804,18 +12801,15 @@ return jQuery;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_backbone__);
 
-
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_backbone___default.a.Model.extend({
-
-    defaults: {
-        total: 0
-    },
-    validate: function (attrs, options) {
-        if (attrs.end < attrs.start) {
-            return "Can't end before it starts";
-        }
+  defaults: {
+    total: 0
+  },
+  validate: function (attrs, options) {
+    if (attrs.end < attrs.start) {
+      return "Can't end before it starts";
     }
-
+  }
 }));
 
 /***/ }),
@@ -12826,11 +12820,8 @@ return jQuery;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_backbone__);
 
-
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_backbone___default.a.View.extend({
-
   el: '#app'
-
 }));
 
 /***/ }),
@@ -13002,19 +12993,20 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_Total__ = __webpack_require__(7);
 
 
-
 /* harmony default export */ __webpack_exports__["a"] = (Backbone.View.extend({
-    el: '#footer-wrapper',
-    template: __WEBPACK_IMPORTED_MODULE_0__templates_partials_Footer_hbs___default.a,
-    model: __WEBPACK_IMPORTED_MODULE_1__models_Total__["a" /* default */],
-    initialize() {
-        this.listenTo(this.model, 'reset change', this.render);
-    },
-    render() {
-        console.log(this.model.attributes);
-        var total = JSON.stringify(this.model.attributes.total);
-        this.$el.html(this.template(total));
-    }
+  el: '#footer-wrapper',
+  template: __WEBPACK_IMPORTED_MODULE_0__templates_partials_Footer_hbs___default.a,
+  model: __WEBPACK_IMPORTED_MODULE_1__models_Total__["a" /* default */],
+
+  initialize() {
+    this.listenTo(this.model, 'reset change', this.render);
+  },
+
+  render() {
+    console.log(this.model.attributes);
+    var total = JSON.stringify(this.model.attributes.total);
+    this.$el.html(this.template(total));
+  }
 
 }));
 
@@ -13031,8 +13023,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_main_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__styles_main_css__);
 
 
-
 /* eslint-disable */
+
 
 /* eslint-enable */
 
@@ -14785,20 +14777,19 @@ module.exports = function(module) {
 
 
 function showView(view) {
-    view.render();
+  view.render();
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_backbone___default.a.Router.extend({
+  routes: {
+    '': 'home'
+  },
 
-    routes: {
-        '': 'home'
-    },
-
-    home() {
-        showView(new __WEBPACK_IMPORTED_MODULE_1__views_home__["a" /* default */]());
-        showView(new __WEBPACK_IMPORTED_MODULE_2__views_Titles__["a" /* default */]());
-        showView(new __WEBPACK_IMPORTED_MODULE_3__views_RadioBtn__["a" /* default */]());
-    }
+  home() {
+    showView(new __WEBPACK_IMPORTED_MODULE_1__views_home__["a" /* default */]());
+    showView(new __WEBPACK_IMPORTED_MODULE_2__views_Titles__["a" /* default */]());
+    showView(new __WEBPACK_IMPORTED_MODULE_3__views_RadioBtn__["a" /* default */]());
+  }
 
 }));
 
@@ -14824,64 +14815,66 @@ function showView(view) {
 
 
 
-
 var total = new __WEBPACK_IMPORTED_MODULE_0__models_Total__["a" /* default */]();
-var footer = new __WEBPACK_IMPORTED_MODULE_6__Footer__["a" /* default */]({ model: total });
+var footer = new __WEBPACK_IMPORTED_MODULE_6__Footer__["a" /* default */]({
+  model: total
+});
 var prices = {};
 __WEBPACK_IMPORTED_MODULE_4_handlebars_runtime___default.a.registerHelper('minP', function (price, index) {
-    var opts = price['sailing_options'];
-    var arr = [];
-    __WEBPACK_IMPORTED_MODULE_5_jquery___default()(opts).each((i, e) => {
-        var pr = e["sailing_price"];
-        arr.push(pr);
-    });
-
-    arr = arr.sort()[0];
-
-    return arr;
+  var opts = price['sailing_options'];
+  var arr = [];
+  __WEBPACK_IMPORTED_MODULE_5_jquery___default()(opts).each((i, e) => {
+    var pr = e["sailing_price"];
+    arr.push(pr);
+  });
+  arr = arr.sort()[0];
+  return arr;
 });
-
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_1__Page__["a" /* default */].extend({
+  template: __WEBPACK_IMPORTED_MODULE_2__templates_Home_hbs___default.a,
 
-    template: __WEBPACK_IMPORTED_MODULE_2__templates_Home_hbs___default.a,
-    initialize() {
-        this.collection = new __WEBPACK_IMPORTED_MODULE_3__collections_Cards_js__["a" /* default */]();
-        this.listenTo(this.collection, 'reset change', this.render);
-        footer.render();
-    },
-    render: function () {
-        const self = this;
-        self.collection.fetch({
-            success() {
-                var f2 = self.collection.get("cruise0").attributes;
-                var f4 = self.collection.get("cruise1").attributes;
-                var f5 = self.collection.get("cruise2").attributes;
-                self.$el.html(self.template({ f2, f4, f5 }));
-            }
+  initialize() {
+    this.collection = new __WEBPACK_IMPORTED_MODULE_3__collections_Cards_js__["a" /* default */]();
+    this.listenTo(this.collection, 'reset change', this.render);
+    footer.render();
+  },
 
-        });
+  render: function () {
+    const self = this;
+    self.collection.fetch({
+      success() {
+        var f2 = self.collection.get("cruise0").attributes;
+        var f4 = self.collection.get("cruise1").attributes;
+        var f5 = self.collection.get("cruise2").attributes;
+        self.$el.html(self.template({
+          f2,
+          f4,
+          f5
+        }));
+      }
 
-        return this;
-    },
-    events: {
-        'input .cruiseI': 'valChange'
-    },
-    valChange(data) {
-        var selectedPrices = [];
-        var value = data.target.value;
-        value = parseInt(value);
-        prices[data.target.name] = value;
+    });
+    return this;
+  },
+  events: {
+    'input .cruiseI': 'valChange'
+  },
 
-        Object.values(prices).forEach((i, e) => {
-            selectedPrices.push(i);
-        });
-
-        var totalPrice = selectedPrices.reduce(function (accumulator, currentValue) {
-            return accumulator + currentValue;
-        }, 0);
-
-        total.set({ total: totalPrice });
-    }
+  valChange(data) {
+    var selectedPrices = [];
+    var value = data.target.value;
+    value = parseInt(value);
+    prices[data.target.name] = value;
+    Object.values(prices).forEach((i, e) => {
+      selectedPrices.push(i);
+    });
+    var totalPrice = selectedPrices.reduce(function (accumulator, currentValue) {
+      return accumulator + currentValue;
+    }, 0);
+    total.set({
+      total: totalPrice
+    });
+  }
 
 }));
 
@@ -14894,7 +14887,7 @@ function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj);
 module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "        <div id=\"cruise-card-container\">\n           \n"
+  return "        <div id=\"cruise-card-container\" >\n           \n"
     + ((stack1 = container.invokePartial(__webpack_require__(34),depth0,{"name":"partials/Image_banner","data":data,"indent":"           ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
     + " \n           \n            <div id=\"container-bod-article-body\">\n"
     + ((stack1 = container.invokePartial(__webpack_require__(10),depth0,{"name":"partials/Titles","data":data,"indent":"                ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
@@ -15834,11 +15827,11 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {});
 
-  return "\n<div id=\"container-bod-ribbon-container\">\n    <div id=\"container-bod-ribbon\">\n        <span class=\"container-bod-starting\">Starting at</span>\n        <span class=\"container-bod-cruise-price-ribbon\">\n"
-    + ((stack1 = helpers.minP.call(alias1,depth0,(data && data.index),{"name":"minP","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "</span>\n    </div>\n</div>\n\n<img src=\""
+  return "<div id=\"container-banner-image\" style=\"background-image: url('"
     + ((stack1 = ((helper = (helper = helpers.sailing_main_image || (depth0 != null ? depth0.sailing_main_image : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"sailing_main_image","hash":{},"data":data}) : helper))) != null ? stack1 : "")
-    + "\" alt=\"\">";
+    + "'); background-size: cover; background-repeat: no-repeat no-repeat; height: 100%;\n    width: 100%;\">\n<div id=\"container-bod-ribbon-wrapper\">\n<div id=\"container-bod-ribbon-container\">\n    <div id=\"container-bod-ribbon\">\n        <span class=\"container-bod-starting\">Starting at</span>\n        <span class=\"container-bod-cruise-price-ribbon\">\n"
+    + ((stack1 = helpers.minP.call(alias1,depth0,(data && data.index),{"name":"minP","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "</span>\n    </div>\n</div>\n</div>\n</div>\n";
 },"useData":true});
 
 /***/ }),
@@ -15863,14 +15856,14 @@ module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[7,"
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__collections_Cards_js__ = __webpack_require__(6);
 
 
-
 /* harmony default export */ __webpack_exports__["a"] = (Backbone.View.extend({
-    el: "#container-bod-article-body",
-    template: __WEBPACK_IMPORTED_MODULE_0__templates_partials_Titles_hbs___default.a,
-    render() {
-        this.$el.html(this.template());
-        return this;
-    }
+  el: "#container-bod-article-body",
+  template: __WEBPACK_IMPORTED_MODULE_0__templates_partials_Titles_hbs___default.a,
+
+  render() {
+    this.$el.html(this.template());
+    return this;
+  }
 
 }));
 
@@ -15886,15 +15879,16 @@ module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[7,"
 
 
 
-
 /* harmony default export */ __webpack_exports__["a"] = (Backbone.View.extend({
-    template: __WEBPACK_IMPORTED_MODULE_2__templates_partials_Radiobtn_hbs___default.a,
-    initialize() {},
-    render() {
-        const self = this;
-        self.$el.html(self.template());
-        return this;
-    }
+  template: __WEBPACK_IMPORTED_MODULE_2__templates_partials_Radiobtn_hbs___default.a,
+
+  initialize() {},
+
+  render() {
+    const self = this;
+    self.$el.html(self.template());
+    return this;
+  }
 
 }));
 
