@@ -19,7 +19,14 @@ module.exports = {
             {
                 test: /\.hbs$/,
                 loader: 'handlebars-loader',
-                exclude: /node_modules/
+                exclude: /node_modules/,
+                options: {
+                    precompileOptions: {
+                        knownHelpers: ['minP'],
+                        knownHelpersOnly: false,
+                    },
+                },
+
             },
             {
                 test: /\.(s*)css$/,
@@ -68,7 +75,7 @@ module.exports = {
     devtool: 'source-map',
     resolve: {
         alias: {
-            'handlebars': 'handlebars/dist/handlebars.js'
+            'Handlebars': 'handlebars/dist/handlebars.js'
         }
     }
 };

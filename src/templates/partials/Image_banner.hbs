@@ -1,11 +1,12 @@
- {{#sailing_options}}
+
 <div id="container-bod-ribbon-container">
     <div id="container-bod-ribbon">
         <span class="container-bod-starting">Starting at</span>
         <span class="container-bod-cruise-price-ribbon">
-								
-									${{sailing_price}}</span>
+								{{#minP this @index}}
+									${{sailing_price}}
+									{{/minP}}</span>
     </div>
 </div>
-{{/sailing_options}}
+
 <img src="{{{sailing_main_image}}}" alt="">

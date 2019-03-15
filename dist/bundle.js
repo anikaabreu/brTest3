@@ -2415,7 +2415,6 @@ module.exports = g;
         var loop = response.cruise_lines;
 
         __WEBPACK_IMPORTED_MODULE_1_jquery___default()(loop).each((i, e) => {
-            console.log('fireCards');
             var cruise = new self.model();
             var attrs = Object.assign(e, response.sailings[i]);
             cruise.set('id', "cruise" + i);
@@ -14777,9 +14776,27 @@ function showView(view) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__templates_Home_hbs__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__templates_Home_hbs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__templates_Home_hbs__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__collections_Cards_js__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_handlebars_runtime__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_handlebars_runtime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_handlebars_runtime__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_jquery__);
 
 
 
+
+
+__WEBPACK_IMPORTED_MODULE_3_handlebars_runtime___default.a.registerHelper('minP', function (price, index) {
+    var opts = price['sailing_options'];
+    var arr = [];
+    __WEBPACK_IMPORTED_MODULE_4_jquery___default()(opts).each((i, e) => {
+        var pr = e["sailing_price"];
+        arr.push(pr);
+    });
+
+    arr = arr.sort()[0];
+
+    return arr;
+});
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0__Page__["a" /* default */].extend({
 
@@ -14792,16 +14809,13 @@ function showView(view) {
         const self = this;
         self.collection.fetch({
             success() {
-
                 var f2 = self.collection.get("cruise0").attributes;
                 var f4 = self.collection.get("cruise1").attributes;
                 var f5 = self.collection.get("cruise2").attributes;
-                // console.log(f2, f4, f5)
                 self.$el.html(self.template({ f2, f4, f5 }));
             }
 
         });
-        // console.log(self.collection)
 
         return this;
     }
@@ -14827,7 +14841,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "<main class=\"container\" id=\"home-page\">\n    <div id=\"cruise-card-header\">\n        <span id=\"cruise-card-title\">\n            Choose Your Sailings\n        </span>\n        <span id=\"cruise-card-sub-header\">\n            (Pick one for each box)\n        </span>\n    </div>\n  \n    <div id=\"cruise-card-wrapper\">\n		\n"
+  return "<main class=\"container\" id=\"home-page\">\n    <div id=\"cruise-card-header\">\n        <span id=\"cruise-card-title\">\n            Choose Your Sailings\n        </span>\n        <span id=\"cruise-card-sub-header\">\n           (Pick one for each box)\n        </span>\n    </div>\n  \n    <div id=\"cruise-card-wrapper\">\n		\n"
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),depth0,{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "    </div>\n    <div id=\"footer-wrapper\">\n"
     + ((stack1 = container.invokePartial(__webpack_require__(11),depth0,{"name":"partials/Footer","data":data,"indent":"        ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
@@ -15753,17 +15767,16 @@ function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj);
 module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
     var helper;
 
-  return "<div id=\"container-bod-ribbon-container\">\n    <div id=\"container-bod-ribbon\">\n        <span class=\"container-bod-starting\">Starting at</span>\n        <span class=\"container-bod-cruise-price-ribbon\">\n								\n									$"
+  return "									$"
     + container.escapeExpression(((helper = (helper = helpers.sailing_price || (depth0 != null ? depth0.sailing_price : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"sailing_price","hash":{},"data":data}) : helper)))
-    + "</span>\n    </div>\n</div>\n";
+    + "\n									";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, helper, options, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", buffer = "";
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing;
 
-  stack1 = ((helper = (helper = helpers.sailing_options || (depth0 != null ? depth0.sailing_options : depth0)) != null ? helper : alias2),(options={"name":"sailing_options","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data}),(typeof helper === alias3 ? helper.call(alias1,options) : helper));
-  if (!helpers.sailing_options) { stack1 = helpers.blockHelperMissing.call(depth0,stack1,options)}
-  if (stack1 != null) { buffer += stack1; }
-  return buffer + "<img src=\""
-    + ((stack1 = ((helper = (helper = helpers.sailing_main_image || (depth0 != null ? depth0.sailing_main_image : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"sailing_main_image","hash":{},"data":data}) : helper))) != null ? stack1 : "")
+  return "\n<div id=\"container-bod-ribbon-container\">\n    <div id=\"container-bod-ribbon\">\n        <span class=\"container-bod-starting\">Starting at</span>\n        <span class=\"container-bod-cruise-price-ribbon\">\n"
+    + ((stack1 = (helpers.minP || (depth0 && depth0.minP) || alias2).call(alias1,depth0,(data && data.index),{"name":"minP","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "</span>\n    </div>\n</div>\n\n<img src=\""
+    + ((stack1 = ((helper = (helper = helpers.sailing_main_image || (depth0 != null ? depth0.sailing_main_image : depth0)) != null ? helper : alias2),(typeof helper === "function" ? helper.call(alias1,{"name":"sailing_main_image","hash":{},"data":data}) : helper))) != null ? stack1 : "")
     + "\" alt=\"\">";
 },"useData":true});
 
