@@ -1,3 +1,291 @@
+#cruise-card-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#cruise-card-container {
+    background: white;
+}
+
 body {
-    background: turquoise;
+    height: 100vh;
+    width: 100vw;
+    background-color: #d6d6d6;
+}
+
+#container {
+    background-color: turquoise;
+    color: black;
+    margin: auto;
+    padding: 0;
+    width: 100vw;
+    font-family: 'Lato', sans-serif;
+}
+
+
+/*// HEADER////////////////////////////////////*/
+
+#cruise-card-header {
+    position: relative;
+    top: 30px;
+    padding: 1px 0 10px 0;
+}
+
+#cruise-card-title {
+    display: inline;
+    width: 100%;
+    font-size: 36.3px;
+    font-weight: 600;
+}
+
+#cruise-card-sub-header {
+    font-size: 22px;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    color: #444540;
+}
+
+
+/*CARDS////////////////////////////////////*/
+
+.container-bod-card {
+    margin: 20px;
+}
+
+.cruise-card-wrapper {
+    display: flex;
+    flex: wrap;
+}
+
+.cruise-card-container {
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    margin-top: 61px;
+    flex-direction: row;
+}
+
+article #container-bod-article .tile {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    max-width: 300px;
+    margin-right: 5px;
+}
+
+article {
+    background: #ffffff;
+    border-radius: 2px;
+    margin: 0 auto;
+    overflow: auto;
+    position: relative;
+}
+
+.container-bod-article-body {
+    padding: 11px 13px 19px;
+    padding-right: 20px;
+}
+
+.container-bod-article-heading {
+    color: #2f3032;
+    font-size: 28.4px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.container-bod-article-tags {
+    color: #313131;
+    font-size: 12.4px;
+}
+
+input[type="radio"] {
+    margin: 5px;
+}
+
+li {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    line-height: 2;
+    font-size: 16px;
+}
+
+.container-bod-list-group {
+    margin-top: 7px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*RIBBON////////////////////////////////////////*/
+
+#container-bod-ribbon-container {
+    color: black;
+    position: absolute;
+    top: 50px;
+    right: -16px;
+    font-size: 18px;
+    z-index: 100;
+    line-height: 8px;
+}
+
+#container-bod-ribbon-container:before {
+    content: "";
+    height: 0;
+    width: 0;
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 0;
+}
+
+#container-bod-ribbon-container:after {
+    content: "";
+    height: 3px;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 58px;
+    right: 3px;
+}
+
+#container-bod-ribbon-container div {
+    display: block;
+    padding: 20px;
+    position: relative;
+    background: #ff9900;
+    overflow: visible;
+    height: 49px;
+    color: black;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+#container-bod-ribbon-container div:after {
+    content: "";
+    height: 0;
+    width: 0;
+    display: block;
+    position: absolute;
+    bottom: -15px;
+    right: 0;
+    border-top: 15px solid #bb7100;
+    border-right: 15px solid transparent;
+}
+
+.container-bod-starting {
+    font-family: inherit;
+    bottom: 10px;
+    right: 7px;
+    position: inherit;
+    font-size: 15px;
+    font-weight: 100;
+}
+
+.container-bod-cruise-price-ribbon {
+    font-size: 51px;
+    display: flex;
+    flex-direction: column;
+    font-weight: 900;
+    line-height: .9;
+    margin-left: 3px;
+}
+
+
+/*FOOTER//////////////////////////////////////*/
+
+.container-bod-footer-wrapper {
+    height: auto;
+    width: auto;
+    align-content: space-between;
+}
+
+.container-bod-total-footer {
+    display: flex;
+    align-items: center;
+    border-top: 3px solid gray;
+    justify-content: space-between;
+    padding: 31px 0;
+    margin: 22px 0;
+    width: 100%;
+    font-weight: 600;
+}
+
+.container-bod-total-txt {
+    font-size: 35px;
+}
+
+#container-bod-total-result-price {
+    font-size: 34px;
+    background-color: #ff9900;
+    padding: .5rem .5rem .5rem 2rem;
+}
+
+
+/*PRICE ELEMENTS//////////////////////////////////*/
+
+.container-bod-cruise-price-style {
+    color: #ff9900;
+    font-weight: 600;
+}
+
+
+/*MEDIA QUERIES/////////////////////////////*/
+
+
+/*IPAD*/
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1025px) {
+    .container-bod {
+        width: 100%;
+        flex-direction: column;
+    }
+    .container-bod-1 {
+        padding: 40px 40px 0px 40px;
+    }
+    .container-bod-cruise-card-wrapper {
+        max-width: 100%;
+    }
+    .container-bod-cruise-cards {
+        flex-direction: column;
+    }
+    article.container-bod-article.tile {
+        flex-direction: row;
+        height: 273px;
+        width: 100%;
+        max-width: 100%;
+    }
+    footer {
+        position: fixed;
+        background-color: white;
+    }
+}
+
+
+/*IPHONE 5*/
+
+@media (max-width: 568px) {
+    .container-bod {
+        width: 100%;
+    }
+    .container-bod-header-title {
+        display: block;
+        text-align: center;
+        font-size: 80px;
+        margin-top: 47px;
+    }
+    .container-bod-cruise-cards {
+        flex-direction: column;
+    }
+    .container-bod-header-inst-txt {
+        font-size: 33px;
+        text-align: left;
+    }
 }

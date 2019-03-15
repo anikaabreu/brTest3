@@ -1,3 +1,16 @@
+#cruise-card-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#cruise-card-container {
+  background: white;
+}
+
 body {
   height: 100vh;
   width: 100vw;
@@ -10,13 +23,10 @@ body {
   margin: auto;
   padding: 0;
   width: 100vw;
-  font-family: 'Lato',
-    sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
-
 /*// HEADER////////////////////////////////////*/
-
 #cruise-card-header {
   position: relative;
   top: 30px;
@@ -39,35 +49,47 @@ body {
   color: #444540;
 }
 
-
 /*CARDS////////////////////////////////////*/
-
 .container-bod-card {
   margin: 20px;
 }
 
 .cruise-card-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex: wrap;
+  -webkit-box-flex: wrap;
+      -ms-flex: wrap;
+          flex: wrap;
 }
 
 .cruise-card-container {
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   margin-top: 61px;
-  flex-direction: row;
-
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 article #container-bod-article .tile {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 300px;
   max-width: 300px;
   margin-right: 5px;
 }
-
 
 article {
   background: #ffffff;
@@ -76,7 +98,6 @@ article {
   overflow: auto;
   position: relative;
 }
-
 
 .container-bod-article-body {
   padding: 11px 13px 19px;
@@ -99,11 +120,14 @@ input[type="radio"] {
   margin: 5px;
 }
 
-
 li {
   list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 0;
   padding: 0;
   line-height: 2;
@@ -119,9 +143,7 @@ ul {
   padding: 0;
 }
 
-
 /*RIBBON////////////////////////////////////////*/
-
 #container-bod-ribbon-container {
   color: black;
   position: absolute;
@@ -187,27 +209,37 @@ ul {
 
 .container-bod-cruise-price-ribbon {
   font-size: 51px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-weight: 900;
   line-height: .9;
   margin-left: 3px;
 }
 
-
 /*FOOTER//////////////////////////////////////*/
-
 .container-bod-footer-wrapper {
   height: auto;
   width: auto;
-  align-content: space-between;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
 }
 
 .container-bod-total-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-top: 3px solid gray;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 31px 0;
   margin: 22px 0;
   width: 100%;
@@ -224,44 +256,43 @@ ul {
   padding: .5rem .5rem .5rem 2rem;
 }
 
-
 /*PRICE ELEMENTS//////////////////////////////////*/
-
 .container-bod-cruise-price-style {
   color: #ff9900;
   font-weight: 600;
 }
 
-
 /*MEDIA QUERIES/////////////////////////////*/
-
-
 /*IPAD*/
 @media only screen and (min-device-width: 768px) and (max-device-width: 1025px) {
   .container-bod {
     width: 100%;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-
   .container-bod-1 {
     padding: 40px 40px 0px 40px;
   }
-
   .container-bod-cruise-card-wrapper {
     max-width: 100%;
   }
-
   .container-bod-cruise-cards {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-
   article.container-bod-article.tile {
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     height: 273px;
     width: 100%;
     max-width: 100%;
   }
-
   footer {
     position: fixed;
     background-color: white;
@@ -269,25 +300,25 @@ ul {
 }
 
 /*IPHONE 5*/
-
 @media (max-width: 568px) {
   .container-bod {
     width: 100%;
   }
-
   .container-bod-header-title {
     display: block;
     text-align: center;
     font-size: 80px;
     margin-top: 47px;
   }
-
   .container-bod-cruise-cards {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-
   .container-bod-header-inst-txt {
     font-size: 33px;
     text-align: left;
   }
 }
+/*# sourceMappingURL=main.css.map */

@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -200,7 +200,7 @@ function appendContextPath(contextPath, id) {
 
 // Create a simple path alias to allow browserify to resolve
 // the runtime on a supported path.
-module.exports = __webpack_require__(15)['default'];
+module.exports = __webpack_require__(18)['default'];
 
 
 /***/ }),
@@ -284,7 +284,7 @@ module.exports = exports['default'];
 
   // Set up Backbone appropriately for the environment. Start with AMD.
   if (true) {
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(8), __webpack_require__(5), exports], __WEBPACK_AMD_DEFINE_RESULT__ = (function(_, $, exports) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(13), __webpack_require__(6), exports], __WEBPACK_AMD_DEFINE_RESULT__ = (function(_, $, exports) {
       // Export global even in AMD case in case this script is loaded with
       // others that may still expect a global Backbone.
       root.Backbone = factory(root, exports, _, $);
@@ -2397,6 +2397,37 @@ module.exports = g;
 
 /***/ }),
 /* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_backbone__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_jquery__);
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_backbone___default.a.Collection.extend({
+
+    url: 'https://api.myjson.com/bins/2gr36',
+    parse: function (response) {
+        var self = this;
+        var loop = response.cruise_lines;
+
+        __WEBPACK_IMPORTED_MODULE_1_jquery___default()(loop).each((i, e) => {
+            console.log('fireCards');
+            var cruise = new self.model();
+            var attrs = Object.assign(e, response.sailings[i]);
+            cruise.set('id', "cruise" + i);
+            cruise.set(attrs);
+            self.add(cruise);
+        });
+        return self.models;
+    }
+}));
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -12767,7 +12798,22 @@ return jQuery;
 
 
 /***/ }),
-/* 6 */
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_backbone__);
+
+
+/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_backbone___default.a.View.extend({
+
+  el: '#app'
+
+}));
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12785,11 +12831,11 @@ var _exception = __webpack_require__(2);
 
 var _exception2 = _interopRequireDefault(_exception);
 
-var _helpers = __webpack_require__(16);
+var _helpers = __webpack_require__(19);
 
-var _decorators = __webpack_require__(24);
+var _decorators = __webpack_require__(27);
 
-var _logger = __webpack_require__(26);
+var _logger = __webpack_require__(29);
 
 var _logger2 = _interopRequireDefault(_logger);
 
@@ -12878,20 +12924,80 @@ exports.logger = _logger2['default'];
 
 
 /***/ }),
-/* 7 */
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Handlebars = __webpack_require__(1);
+function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
+module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return "\n<div class=\"container-bod-article-tags\">\n     "
+    + alias4(((helper = (helper = helpers.cruise_line_name || (depth0 != null ? depth0.cruise_line_name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"cruise_line_name","hash":{},"data":data}) : helper)))
+    + " - "
+    + alias4(((helper = (helper = helpers.cruise_ship_name || (depth0 != null ? depth0.cruise_ship_name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"cruise_ship_name","hash":{},"data":data}) : helper)))
+    + "\n</div>\n\n<div class=\"container-bod-article-heading\">\n	"
+    + alias4(((helper = (helper = helpers.sailing_name || (depth0 != null ? depth0.sailing_name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"sailing_name","hash":{},"data":data}) : helper)))
+    + "\n</div>\n";
+},"useData":true});
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Handlebars = __webpack_require__(1);
+function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
+module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return "    <li>\n \n        <span>\n            <input type=\"radio\" name=\"article-"
+    + ((stack1 = ((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper))) != null ? stack1 : "")
+    + ((stack1 = ((helper = (helper = helpers.cruise_line_id || (depth0 != null ? depth0.cruise_line_id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"cruise_line_id","hash":{},"data":data}) : helper))) != null ? stack1 : "")
+    + "\" value=\" "
+    + ((stack1 = ((helper = (helper = helpers.sailing_price || (depth0 != null ? depth0.sailing_price : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"sailing_price","hash":{},"data":data}) : helper))) != null ? stack1 : "")
+    + "\" />\n      \n      "
+    + alias4(((helper = (helper = helpers.sailing_date || (depth0 != null ? depth0.sailing_date : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"sailing_date","hash":{},"data":data}) : helper)))
+    + "\n            \n        </span>\n\n        <span class=\"container-bod-cruise-price-style\" id=\"container-bod-cruise-price-1\">\n  "
+    + alias4(((helper = (helper = helpers.sailing_price || (depth0 != null ? depth0.sailing_price : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"sailing_price","hash":{},"data":data}) : helper)))
+    + "\n        </span>\n    </li>\n\n";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, options, buffer = 
+  "<ul class=\"container-bod-list-group\">\n";
+  stack1 = ((helper = (helper = helpers.sailing_options || (depth0 != null ? depth0.sailing_options : depth0)) != null ? helper : helpers.helperMissing),(options={"name":"sailing_options","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data}),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),options) : helper));
+  if (!helpers.sailing_options) { stack1 = helpers.blockHelperMissing.call(depth0,stack1,options)}
+  if (stack1 != null) { buffer += stack1; }
+  return buffer + "\n</ul>\n";
+},"useData":true});
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Handlebars = __webpack_require__(1);
+function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
+module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper;
+
+  return "<div class=\"container-bod-footer-wrapper\">\n	<footer class=\"container-bod-total-footer\">\n		<div class=\"container-bod-total-txt\">\n			Your Selected Sailings Total\n		</div>\n		<span id=\"container-bod-total-result-price\">$"
+    + container.escapeExpression(((helper = (helper = helpers.total || (depth0 != null ? depth0.total : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"total","hash":{},"data":data}) : helper)))
+    + "</span>\n	</footer>\n</div>";
+},"useData":true});
+
+/***/ }),
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_backbone__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Router__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_main_css__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Router__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_main_css__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_main_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__styles_main_css__);
 
 
-/* eslint-disable */
 
+/* eslint-disable */
 
 /* eslint-enable */
 
@@ -12899,7 +13005,7 @@ new __WEBPACK_IMPORTED_MODULE_1__Router__["a" /* default */]();
 __WEBPACK_IMPORTED_MODULE_0_backbone___default.a.history.start();
 
 /***/ }),
-/* 8 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Underscore.js 1.9.1
@@ -14596,10 +14702,10 @@ __WEBPACK_IMPORTED_MODULE_0_backbone___default.a.history.start();
   }
 }());
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(9)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(14)(module)))
 
 /***/ }),
-/* 9 */
+/* 14 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -14627,16 +14733,16 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 10 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_backbone__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__views_home__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_Titles__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_RadioBtn__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_Footer__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__views_home__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_Titles__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_RadioBtn__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_Footer__ = __webpack_require__(36);
 
 
 
@@ -14644,142 +14750,66 @@ module.exports = function(module) {
 
 
 function showView(view) {
-  view.render();
+    view.render();
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_backbone___default.a.Router.extend({
-  routes: {
-    '': 'home'
-  },
 
-  home() {
-    showView(new __WEBPACK_IMPORTED_MODULE_1__views_home__["a" /* default */]());
-    showView(new __WEBPACK_IMPORTED_MODULE_2__views_Titles__["a" /* default */]());
-    showView(new __WEBPACK_IMPORTED_MODULE_3__views_RadioBtn__["a" /* default */]());
-    showView(new __WEBPACK_IMPORTED_MODULE_4__views_Footer__["a" /* default */]());
-  }
+    routes: {
+        '': 'home'
+    },
+
+    home() {
+        showView(new __WEBPACK_IMPORTED_MODULE_1__views_home__["a" /* default */]());
+        showView(new __WEBPACK_IMPORTED_MODULE_2__views_Titles__["a" /* default */]());
+        showView(new __WEBPACK_IMPORTED_MODULE_3__views_RadioBtn__["a" /* default */]());
+        showView(new __WEBPACK_IMPORTED_MODULE_4__views_Footer__["a" /* default */]());
+    }
 
 }));
 
 /***/ }),
-/* 11 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Page__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__templates_Home_hbs__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Page__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__templates_Home_hbs__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__templates_Home_hbs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__templates_Home_hbs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__collections_Cards_js__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__collections_Cards_js__ = __webpack_require__(5);
+
 
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0__Page__["a" /* default */].extend({
-  template: __WEBPACK_IMPORTED_MODULE_1__templates_Home_hbs___default.a,
 
-  initialize() {
-    this.collection = new __WEBPACK_IMPORTED_MODULE_2__collections_Cards_js__["a" /* default */]();
-  },
+    template: __WEBPACK_IMPORTED_MODULE_1__templates_Home_hbs___default.a,
+    initialize() {
+        this.collection = new __WEBPACK_IMPORTED_MODULE_2__collections_Cards_js__["a" /* default */]();
+    },
 
-  render: function () {
-    const self = this;
-    self.collection.fetch({
-      success() {
-        var images = [];
-        var price = [];
-        var day = [];
-        var sailingTitle = [];
-        var cruiseName = [];
-        var cruiseShip = [];
-        var minP = [];
-        var one = [];
-        var two = [];
-        var three = [];
-        console.log(self.collection.models[0].attributes);
-        console.log(self.collection.get("cruise0").attributes);
-        one.push(self.collection.get("cruise0").attributes);
-        two.push(self.collection.get("cruise1").attributes);
-        three.push(self.collection.get("cruise2").attributes); //  self.collection.each((i, e) => {
-        //     //  console.log(i.attributes)
-        //      var img = i.attributes.sailing_main_image;
-        //      var sT = i.attributes.sailing_name;
-        //      var cS = i.attributes.cruise_ship_name;
-        //      var cN = i.attributes.cruise_line_name;
-        //      var mP = i.attributes;
-        //      var opts = i.attributes.sailing_options
-        //      for (var y = 0; y < opts.length; y++) {
-        //          var pr = opts[y].sailing_price
-        //          var dy = opts[y].sailing_date
-        //          day.push(dy)
-        //          price.push(pr)
-        //      }
-        //      images.push(img)
-        //     //  price.push(pr)
-        //      sailingTitle.push(sT)
-        //      cruiseName.push(cN)
-        //      cruiseShip.push(cS)
-        //      one.push(i.attributes)
-        //      two.push(i.attributes)
-        //      three.push(i.attributes)
-        //     //  console.log(i)
-        //     //   console.log('1',one)
-        //  })
-        //  console.log(cruiseName.length)
+    render: function () {
+        const self = this;
+        self.collection.fetch({
+            success() {
 
-        self.$el.html(self.template({
-          one: one,
-          two: two,
-          three: three
-        }));
-      }
+                var f2 = self.collection.get("cruise0").attributes;
+                var f4 = self.collection.get("cruise1").attributes;
+                var f5 = self.collection.get("cruise2").attributes;
+                // console.log(f2, f4, f5)
+                self.$el.html(self.template({ f2, f4, f5 }));
+            }
 
-    }); // console.log(self.collection)
+        });
+        // console.log(self.collection)
 
-    return this;
-  }
+        return this;
+    }
+
 }));
 
 /***/ }),
-/* 12 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_backbone__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_jquery__);
-
-
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_backbone___default.a.Collection.extend({
-  url: 'https://api.myjson.com/bins/2gr36',
-  parse: function (response) {
-    var self = this;
-    var loop = response.cruise_lines;
-    __WEBPACK_IMPORTED_MODULE_1_jquery___default()(loop).each((i, e) => {
-      console.log('fireCards');
-      var cruise = new self.model();
-      var attrs = Object.assign(e, response.sailings[i]);
-      cruise.set('id', "cruise" + i);
-      cruise.set(attrs);
-      self.add(cruise);
-    });
-    return self.models;
-  }
-}));
-
-/***/ }),
-/* 13 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_backbone__);
-
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_backbone___default.a.View.extend({
-  el: '#app'
-}));
-
-/***/ }),
-/* 14 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Handlebars = __webpack_require__(1);
@@ -14787,23 +14817,25 @@ function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj);
 module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "        <div id=\"cruise-card-container\">\n           <div id=\"cruise-banner-img\">\n         \n    \n"
-    + ((stack1 = container.invokePartial(__webpack_require__(32),depth0,{"name":"partials/Radiobtn","data":data,"indent":"            ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
+  return "        <div id=\"cruise-card-container\">\n           <div id=\"cruise-banner-img\">\n"
+    + ((stack1 = container.invokePartial(__webpack_require__(33),depth0,{"name":"partials/Image_banner","data":data,"indent":"           ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
     + " \n           </div>\n            <div id=\"container-bod-article-body\">\n"
-    + ((stack1 = container.invokePartial(__webpack_require__(31),depth0,{"name":"partials/Titles","data":data,"indent":"                ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
-    + "            </div>\n            <div id=\"radioBtn-wrapper\">\n            </div>\n        </div>\n";
+    + ((stack1 = container.invokePartial(__webpack_require__(9),depth0,{"name":"partials/Titles","data":data,"indent":"                ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
+    + "            </div>\n            <div id=\"radioBtn-wrapper\">\n"
+    + ((stack1 = container.invokePartial(__webpack_require__(10),depth0,{"name":"partials/Radiobtn","data":data,"indent":"           ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
+    + "            </div>\n        </div>\n      \n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "<main class=\"container\" id=\"home-page\">\n    <div id=\"cruise-card-header\">\n        <span id=\"cruise-card-title\">\n            Choose Your Sailings\n        </span>\n        <span id=\"cruise-card-sub-header\">\n            (Pick one for each box)\n        </span>\n    </div>\n  \n    <div id=\"cruise-card-wrapper\">\n"
+  return "<main class=\"container\" id=\"home-page\">\n    <div id=\"cruise-card-header\">\n        <span id=\"cruise-card-title\">\n            Choose Your Sailings\n        </span>\n        <span id=\"cruise-card-sub-header\">\n            (Pick one for each box)\n        </span>\n    </div>\n  \n    <div id=\"cruise-card-wrapper\">\n		\n"
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),depth0,{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "    </div>\n    <div id=\"footer-wrapper\">\n"
-    + ((stack1 = container.invokePartial(__webpack_require__(33),depth0,{"name":"partials/Footer","data":data,"indent":"        ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
+    + ((stack1 = container.invokePartial(__webpack_require__(11),depth0,{"name":"partials/Footer","data":data,"indent":"        ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
     + "    </div>\n</main>";
 },"usePartial":true,"useData":true});
 
 /***/ }),
-/* 15 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14818,14 +14850,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
 
-var _handlebarsBase = __webpack_require__(6);
+var _handlebarsBase = __webpack_require__(8);
 
 var base = _interopRequireWildcard(_handlebarsBase);
 
 // Each of these augment the Handlebars object. No need to setup here.
 // (This is done to easily share code between commonjs and browse envs)
 
-var _handlebarsSafeString = __webpack_require__(27);
+var _handlebarsSafeString = __webpack_require__(30);
 
 var _handlebarsSafeString2 = _interopRequireDefault(_handlebarsSafeString);
 
@@ -14837,11 +14869,11 @@ var _handlebarsUtils = __webpack_require__(0);
 
 var Utils = _interopRequireWildcard(_handlebarsUtils);
 
-var _handlebarsRuntime = __webpack_require__(28);
+var _handlebarsRuntime = __webpack_require__(31);
 
 var runtime = _interopRequireWildcard(_handlebarsRuntime);
 
-var _handlebarsNoConflict = __webpack_require__(29);
+var _handlebarsNoConflict = __webpack_require__(32);
 
 var _handlebarsNoConflict2 = _interopRequireDefault(_handlebarsNoConflict);
 
@@ -14876,7 +14908,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 16 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14888,31 +14920,31 @@ exports.registerDefaultHelpers = registerDefaultHelpers;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _helpersBlockHelperMissing = __webpack_require__(17);
+var _helpersBlockHelperMissing = __webpack_require__(20);
 
 var _helpersBlockHelperMissing2 = _interopRequireDefault(_helpersBlockHelperMissing);
 
-var _helpersEach = __webpack_require__(18);
+var _helpersEach = __webpack_require__(21);
 
 var _helpersEach2 = _interopRequireDefault(_helpersEach);
 
-var _helpersHelperMissing = __webpack_require__(19);
+var _helpersHelperMissing = __webpack_require__(22);
 
 var _helpersHelperMissing2 = _interopRequireDefault(_helpersHelperMissing);
 
-var _helpersIf = __webpack_require__(20);
+var _helpersIf = __webpack_require__(23);
 
 var _helpersIf2 = _interopRequireDefault(_helpersIf);
 
-var _helpersLog = __webpack_require__(21);
+var _helpersLog = __webpack_require__(24);
 
 var _helpersLog2 = _interopRequireDefault(_helpersLog);
 
-var _helpersLookup = __webpack_require__(22);
+var _helpersLookup = __webpack_require__(25);
 
 var _helpersLookup2 = _interopRequireDefault(_helpersLookup);
 
-var _helpersWith = __webpack_require__(23);
+var _helpersWith = __webpack_require__(26);
 
 var _helpersWith2 = _interopRequireDefault(_helpersWith);
 
@@ -14929,7 +14961,7 @@ function registerDefaultHelpers(instance) {
 
 
 /***/ }),
-/* 17 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14975,7 +15007,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 18 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15076,7 +15108,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 19 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15108,7 +15140,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 20 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15144,7 +15176,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 21 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15177,7 +15209,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 22 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15196,7 +15228,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 23 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15236,7 +15268,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 24 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15248,7 +15280,7 @@ exports.registerDefaultDecorators = registerDefaultDecorators;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var _decoratorsInline = __webpack_require__(25);
+var _decoratorsInline = __webpack_require__(28);
 
 var _decoratorsInline2 = _interopRequireDefault(_decoratorsInline);
 
@@ -15259,7 +15291,7 @@ function registerDefaultDecorators(instance) {
 
 
 /***/ }),
-/* 25 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15295,7 +15327,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 26 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15349,7 +15381,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 27 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15371,7 +15403,7 @@ module.exports = exports['default'];
 
 
 /***/ }),
-/* 28 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15400,7 +15432,7 @@ var _exception = __webpack_require__(2);
 
 var _exception2 = _interopRequireDefault(_exception);
 
-var _base = __webpack_require__(6);
+var _base = __webpack_require__(8);
 
 function checkRevision(compilerInfo) {
   var compilerRevision = compilerInfo && compilerInfo[0] || 1,
@@ -15685,7 +15717,7 @@ function executeDecorators(fn, prog, container, depths, data, blockParams) {
 
 
 /***/ }),
-/* 29 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15713,18 +15745,7 @@ module.exports = exports['default'];
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 30 */,
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Handlebars = __webpack_require__(1);
-function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
-module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "\n<div class=\"container-bod-article-tags\">\n\n</div>\n\n\n<div class=\"container-bod-article-heading\">\n	\n\n\n</div>\n";
-},"useData":true});
-
-/***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Handlebars = __webpack_require__(1);
@@ -15732,144 +15753,113 @@ function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj);
 module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
     var helper;
 
-  return " by "
-    + container.escapeExpression(((helper = (helper = helpers.line || (depth0 != null ? depth0.line : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"line","hash":{},"data":data}) : helper)))
-    + " ";
-},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data,blockParams,depths) {
-    var stack1, helper, alias1=container.escapeExpression, alias2=depth0 != null ? depth0 : (container.nullContext || {});
+  return "<div id=\"container-bod-ribbon-container\">\n    <div id=\"container-bod-ribbon\">\n        <span class=\"container-bod-starting\">Starting at</span>\n        <span class=\"container-bod-cruise-price-ribbon\">\n								\n									$"
+    + container.escapeExpression(((helper = (helper = helpers.sailing_price || (depth0 != null ? depth0.sailing_price : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"sailing_price","hash":{},"data":data}) : helper)))
+    + "</span>\n    </div>\n</div>\n";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, options, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", buffer = "";
 
-  return "<ul class=\"container-bod-list-group\">\n    <li>\n \n        <span>\n            <input type=\"radio\" name=\"article-<%=cruise_line_id%>\" value=\"<%= sailing_price_1 %>\" />\n        \n      \n            <span id=\"sailing-style\">\n\n            "
-    + alias1(container.lambda((depths[1] != null ? depths[1].sailings : depths[1]), depth0))
-    + " \n            "
-    + ((stack1 = helpers["with"].call(alias2,(data && data.key),{"name":"with","hash":{},"fn":container.program(1, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "\n            </span>\n        </span>\n\n        <span class=\"container-bod-cruise-price-style\" id=\"container-bod-cruise-price-1\">\n       \n        </span>\n    </li>\n\n    <li>\n        <span>\n            <input type=\"radio\" name=\"article-<%=cruise_line_id%>\" value=\"<%= sailing_price_2 %>\">\n        </span>\n        <span class=\"container-bod-cruise-price-style\" id=\"container-bod-cruise-price-2\">\n            "
-    + alias1(((helper = (helper = helpers.key || (data && data.key)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias2,{"name":"key","hash":{},"data":data}) : helper)))
-    + "\n        </span>\n    </li>\n\n    <li>\n        <span>\n            <input type=\"radio\" name=\"article-<%=cruise_line_id %>\" value=\"<%= sailing_price_3 %>\">\n\n        </span>\n        <span class=\"container-bod-cruise-price-style\" id=\"container-bod-cruise-price-3\"></span>\n    </li>\n\n</ul>\n";
-},"useData":true,"useDepths":true});
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Handlebars = __webpack_require__(1);
-function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
-module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var helper;
-
-  return "<div class=\"container-bod-footer-wrapper\">\n	<footer class=\"container-bod-total-footer\">\n		<div class=\"container-bod-total-txt\">\n			Your Selected Sailings Total\n		</div>\n		<span id=\"container-bod-total-result-price\">$"
-    + container.escapeExpression(((helper = (helper = helpers.total || (depth0 != null ? depth0.total : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"total","hash":{},"data":data}) : helper)))
-    + "</span>\n	</footer>\n</div>";
+  stack1 = ((helper = (helper = helpers.sailing_options || (depth0 != null ? depth0.sailing_options : depth0)) != null ? helper : alias2),(options={"name":"sailing_options","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data}),(typeof helper === alias3 ? helper.call(alias1,options) : helper));
+  if (!helpers.sailing_options) { stack1 = helpers.blockHelperMissing.call(depth0,stack1,options)}
+  if (stack1 != null) { buffer += stack1; }
+  return buffer + "<img src=\""
+    + ((stack1 = ((helper = (helper = helpers.sailing_main_image || (depth0 != null ? depth0.sailing_main_image : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"sailing_main_image","hash":{},"data":data}) : helper))) != null ? stack1 : "")
+    + "\" alt=\"\">";
 },"useData":true});
 
 /***/ }),
 /* 34 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 35 */,
-/* 36 */,
-/* 37 */,
-/* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__templates_partials_Titles_hbs__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__templates_partials_Titles_hbs__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__templates_partials_Titles_hbs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__templates_partials_Titles_hbs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__collections_Cards_js__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__collections_Cards_js__ = __webpack_require__(5);
 
 
 
 function showView(view) {
-  view.render();
+    view.render();
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (Backbone.View.extend({
-  el: "#container-bod-article-body",
-  template: __WEBPACK_IMPORTED_MODULE_0__templates_partials_Titles_hbs___default.a,
+    el: "#container-bod-article-body",
+    template: __WEBPACK_IMPORTED_MODULE_0__templates_partials_Titles_hbs___default.a,
+    initialize() {
+        this.collection = new __WEBPACK_IMPORTED_MODULE_1__collections_Cards_js__["a" /* default */]();
+    },
+    render() {
+        const self = this;
+        var a = [];
+        var b = [];
+        self.collection.fetch({
 
-  initialize() {
-    this.collection = new __WEBPACK_IMPORTED_MODULE_1__collections_Cards_js__["a" /* default */]();
-  },
-
-  render() {
-    const self = this;
-    var a = [];
-    var b = [];
-    self.collection.fetch({
-      success(mod) {
-        self.collection.each((i, e) => {
-          //  console.log(i, e)
-          var c = i.attributes.cruise_line_name;
-          a.push(c);
-          var d = i.attributes.sailing_name;
-          b.push(d);
+            success(mod) {
+                self.collection.each((i, e) => {
+                    //  console.log(i, e)
+                    var c = i.attributes.cruise_line_name;
+                    a.push(c);
+                    var d = i.attributes.sailing_name;
+                    b.push(d);
+                });
+                self.$el.html(self.template({
+                    titles: a,
+                    names: b
+                }));
+            }
         });
-        self.$el.html(self.template({
-          titles: a,
-          names: b
-        }));
-      }
-
-    });
-    return this;
-  }
+        return this;
+    }
 
 }));
 
 /***/ }),
-/* 39 */
+/* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Page__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__collections_Cards_js__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__templates_partials_Radiobtn_hbs__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Page__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__collections_Cards_js__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__templates_partials_Radiobtn_hbs__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__templates_partials_Radiobtn_hbs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__templates_partials_Radiobtn_hbs__);
 
 
 
 
-function showView(view) {
-  view.render();
-}
-
 /* harmony default export */ __webpack_exports__["a"] = (Backbone.View.extend({
-  //  el: '#radioBtn-wrapper',
-  template: __WEBPACK_IMPORTED_MODULE_2__templates_partials_Radiobtn_hbs___default.a,
-
-  initialize() {//  this.collection = new Cards();
-  },
-
-  render() {
-    const self = this;
-    var a = [];
-    var b = [];
-    self.$el.html(self.template());
-    return this;
-  }
+    template: __WEBPACK_IMPORTED_MODULE_2__templates_partials_Radiobtn_hbs___default.a,
+    initialize() {},
+    render() {
+        const self = this;
+        self.$el.html(self.template());
+        return this;
+    }
 
 }));
 
 /***/ }),
-/* 40 */,
-/* 41 */
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__templates_partials_Footer_hbs__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__templates_partials_Footer_hbs__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__templates_partials_Footer_hbs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__templates_partials_Footer_hbs__);
 
-/* harmony default export */ __webpack_exports__["a"] = (Backbone.View.extend({
-  el: '#footer-wrapper',
-  template: __WEBPACK_IMPORTED_MODULE_0__templates_partials_Footer_hbs___default.a,
 
-  render() {
-    this.$el.html(this.template());
-  }
+/* harmony default export */ __webpack_exports__["a"] = (Backbone.View.extend({
+     el: '#footer-wrapper',
+     template: __WEBPACK_IMPORTED_MODULE_0__templates_partials_Footer_hbs___default.a,
+     render() {
+          this.$el.html(this.template());
+     }
 
 }));
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

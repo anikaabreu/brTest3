@@ -9,22 +9,22 @@
     </div>
   
     <div id="cruise-card-wrapper">
-        {{#each this}}
+		
+				{{#each this}}
         <div id="cruise-card-container">
            <div id="cruise-banner-img">
-         
-    
-            {{> partials/Radiobtn }}
+           {{> partials/Image_banner}}
  
            </div>
             <div id="container-bod-article-body">
                 {{> partials/Titles}}
             </div>
             <div id="radioBtn-wrapper">
-            {{!-- {{> partials/Radiobtn }}  --}}
+           {{> partials/Radiobtn }}
             </div>
         </div>
-        {{/each}}
+      
+							{{/each}}
     </div>
     <div id="footer-wrapper">
         {{> partials/Footer}}

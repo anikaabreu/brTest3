@@ -1,37 +1,19 @@
 <ul class="container-bod-list-group">
+	  {{#sailing_options}}
     <li>
  
         <span>
-            <input type="radio" name="article-<%=cruise_line_id%>" value="<%= sailing_price_1 %>" />
-        
+            <input type="radio" name="article-{{{id}}}{{{cruise_line_id}}}" value=" {{{sailing_price}}}" />
       
-            <span id="sailing-style">
-
-            {{ ../sailings}} 
-            {{#with @key}} by {{line}} {{/with}}
-            </span>
+      {{sailing_date}}
+            
         </span>
 
         <span class="container-bod-cruise-price-style" id="container-bod-cruise-price-1">
-       
+  {{sailing_price}}
         </span>
     </li>
 
-    <li>
-        <span>
-            <input type="radio" name="article-<%=cruise_line_id%>" value="<%= sailing_price_2 %>">
-        </span>
-        <span class="container-bod-cruise-price-style" id="container-bod-cruise-price-2">
-            {{ @key }}
-        </span>
-    </li>
-
-    <li>
-        <span>
-            <input type="radio" name="article-<%=cruise_line_id %>" value="<%= sailing_price_3 %>">
-
-        </span>
-        <span class="container-bod-cruise-price-style" id="container-bod-cruise-price-3"></span>
-    </li>
+  		{{/sailing_options}}
 
 </ul>
