@@ -1,9 +1,9 @@
 <ul class="container-bod-list-group">
 	  {{#sailing_options}}
     <li>
- 
+        
         <span>
-            <input type="radio" name="article-{{{id}}}{{{cruise_line_id}}}" value=" {{{sailing_price}}}" />
+            <input class="cruiseI" id="{{{sailing_price}}}{{@index}}" type="radio" name="article-{{../cruise_line_id}}" value="{{{sailing_price}}}" />
       
       {{sailing_date}}
             

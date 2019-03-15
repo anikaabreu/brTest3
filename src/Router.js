@@ -18,7 +18,6 @@ export default Backbone.Router.extend({
         showView(new Home());
         showView(new Titles());
         showView(new RadioBtn());
-        showView(new Footer());
     },
 
 

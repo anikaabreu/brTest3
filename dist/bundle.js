@@ -12946,27 +12946,29 @@ module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[7,"
 
 var Handlebars = __webpack_require__(1);
 function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
-module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
+module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data,blockParams,depths) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "    <li>\n \n        <span>\n            <input type=\"radio\" name=\"article-"
-    + ((stack1 = ((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper))) != null ? stack1 : "")
-    + ((stack1 = ((helper = (helper = helpers.cruise_line_id || (depth0 != null ? depth0.cruise_line_id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"cruise_line_id","hash":{},"data":data}) : helper))) != null ? stack1 : "")
-    + "\" value=\" "
+  return "    <li>\n        \n        <span>\n            <input class=\"cruiseI\" id=\""
+    + ((stack1 = ((helper = (helper = helpers.sailing_price || (depth0 != null ? depth0.sailing_price : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"sailing_price","hash":{},"data":data}) : helper))) != null ? stack1 : "")
+    + alias4(((helper = (helper = helpers.index || (data && data.index)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"index","hash":{},"data":data}) : helper)))
+    + "\" type=\"radio\" name=\"article-"
+    + alias4(container.lambda((depths[1] != null ? depths[1].cruise_line_id : depths[1]), depth0))
+    + "\" value=\""
     + ((stack1 = ((helper = (helper = helpers.sailing_price || (depth0 != null ? depth0.sailing_price : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"sailing_price","hash":{},"data":data}) : helper))) != null ? stack1 : "")
     + "\" />\n      \n      "
     + alias4(((helper = (helper = helpers.sailing_date || (depth0 != null ? depth0.sailing_date : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"sailing_date","hash":{},"data":data}) : helper)))
     + "\n            \n        </span>\n\n        <span class=\"container-bod-cruise-price-style\" id=\"container-bod-cruise-price-1\">\n  "
     + alias4(((helper = (helper = helpers.sailing_price || (depth0 != null ? depth0.sailing_price : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"sailing_price","hash":{},"data":data}) : helper)))
     + "\n        </span>\n    </li>\n\n";
-},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data,blockParams,depths) {
     var stack1, helper, options, buffer = 
   "<ul class=\"container-bod-list-group\">\n";
-  stack1 = ((helper = (helper = helpers.sailing_options || (depth0 != null ? depth0.sailing_options : depth0)) != null ? helper : helpers.helperMissing),(options={"name":"sailing_options","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data}),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),options) : helper));
+  stack1 = ((helper = (helper = helpers.sailing_options || (depth0 != null ? depth0.sailing_options : depth0)) != null ? helper : helpers.helperMissing),(options={"name":"sailing_options","hash":{},"fn":container.program(1, data, 0, blockParams, depths),"inverse":container.noop,"data":data}),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),options) : helper));
   if (!helpers.sailing_options) { stack1 = helpers.blockHelperMissing.call(depth0,stack1,options)}
   if (stack1 != null) { buffer += stack1; }
   return buffer + "\n</ul>\n";
-},"useData":true});
+},"useData":true,"useDepths":true});
 
 /***/ }),
 /* 11 */
@@ -12975,10 +12977,8 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 var Handlebars = __webpack_require__(1);
 function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
 module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var helper;
-
-  return "<div class=\"container-bod-footer-wrapper\">\n	<footer class=\"container-bod-total-footer\">\n		<div class=\"container-bod-total-txt\">\n			Your Selected Sailings Total\n		</div>\n		<span id=\"container-bod-total-result-price\">$"
-    + container.escapeExpression(((helper = (helper = helpers.total || (depth0 != null ? depth0.total : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"total","hash":{},"data":data}) : helper)))
+    return "<div class=\"container-bod-footer-wrapper\">\n	<footer class=\"container-bod-total-footer\">\n		<div class=\"container-bod-total-txt\">\n			Your Selected Sailings Total\n		</div>\n		<span id=\"container-bod-total-result-price\">$"
+    + container.escapeExpression(container.lambda(depth0, depth0))
     + "</span>\n	</footer>\n</div>";
 },"useData":true});
 
@@ -14762,7 +14762,6 @@ function showView(view) {
         showView(new __WEBPACK_IMPORTED_MODULE_1__views_home__["a" /* default */]());
         showView(new __WEBPACK_IMPORTED_MODULE_2__views_Titles__["a" /* default */]());
         showView(new __WEBPACK_IMPORTED_MODULE_3__views_RadioBtn__["a" /* default */]());
-        showView(new __WEBPACK_IMPORTED_MODULE_4__views_Footer__["a" /* default */]());
     }
 
 }));
@@ -14772,23 +14771,31 @@ function showView(view) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Page__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__templates_Home_hbs__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__templates_Home_hbs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__templates_Home_hbs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__collections_Cards_js__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_handlebars_runtime__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_handlebars_runtime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_handlebars_runtime__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_Total__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Page__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__templates_Home_hbs__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__templates_Home_hbs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__templates_Home_hbs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__collections_Cards_js__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_handlebars_runtime__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_handlebars_runtime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_handlebars_runtime__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Footer__ = __webpack_require__(36);
 
 
 
 
 
-__WEBPACK_IMPORTED_MODULE_3_handlebars_runtime___default.a.registerHelper('minP', function (price, index) {
+
+
+
+var total = new __WEBPACK_IMPORTED_MODULE_0__models_Total__["a" /* default */]();
+var footer = new __WEBPACK_IMPORTED_MODULE_6__Footer__["a" /* default */]({ model: total });
+var prices = {};
+__WEBPACK_IMPORTED_MODULE_4_handlebars_runtime___default.a.registerHelper('minP', function (price, index) {
     var opts = price['sailing_options'];
     var arr = [];
-    __WEBPACK_IMPORTED_MODULE_4_jquery___default()(opts).each((i, e) => {
+    __WEBPACK_IMPORTED_MODULE_5_jquery___default()(opts).each((i, e) => {
         var pr = e["sailing_price"];
         arr.push(pr);
     });
@@ -14798,13 +14805,14 @@ __WEBPACK_IMPORTED_MODULE_3_handlebars_runtime___default.a.registerHelper('minP'
     return arr;
 });
 
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0__Page__["a" /* default */].extend({
+/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_1__Page__["a" /* default */].extend({
 
-    template: __WEBPACK_IMPORTED_MODULE_1__templates_Home_hbs___default.a,
+    template: __WEBPACK_IMPORTED_MODULE_2__templates_Home_hbs___default.a,
     initialize() {
-        this.collection = new __WEBPACK_IMPORTED_MODULE_2__collections_Cards_js__["a" /* default */]();
+        this.collection = new __WEBPACK_IMPORTED_MODULE_3__collections_Cards_js__["a" /* default */]();
+        this.listenTo(this.collection, 'reset change', this.render);
+        footer.render();
     },
-
     render: function () {
         const self = this;
         self.collection.fetch({
@@ -14818,6 +14826,25 @@ __WEBPACK_IMPORTED_MODULE_3_handlebars_runtime___default.a.registerHelper('minP'
         });
 
         return this;
+    },
+    events: {
+        'input .cruiseI': 'valChange'
+    },
+    valChange(data) {
+        var selectedPrices = [];
+        var value = data.target.value;
+        value = parseInt(value);
+        prices[data.target.name] = value;
+
+        Object.values(prices).forEach((i, e) => {
+            selectedPrices.push(i);
+        });
+
+        var totalPrice = selectedPrices.reduce(function (accumulator, currentValue) {
+            return accumulator + currentValue;
+        }, 0);
+
+        total.set({ total: totalPrice });
     }
 
 }));
@@ -14843,9 +14870,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 
   return "<main class=\"container\" id=\"home-page\">\n    <div id=\"cruise-card-header\">\n        <span id=\"cruise-card-title\">\n            Choose Your Sailings\n        </span>\n        <span id=\"cruise-card-sub-header\">\n           (Pick one for each box)\n        </span>\n    </div>\n  \n    <div id=\"cruise-card-wrapper\">\n		\n"
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),depth0,{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "    </div>\n    <div id=\"footer-wrapper\">\n"
-    + ((stack1 = container.invokePartial(__webpack_require__(11),depth0,{"name":"partials/Footer","data":data,"indent":"        ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
-    + "    </div>\n</main>";
+    + "    </div>\n    \n</main>";
 },"usePartial":true,"useData":true});
 
 /***/ }),
@@ -15791,36 +15816,11 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 
 
 
-function showView(view) {
-    view.render();
-}
-
 /* harmony default export */ __webpack_exports__["a"] = (Backbone.View.extend({
     el: "#container-bod-article-body",
     template: __WEBPACK_IMPORTED_MODULE_0__templates_partials_Titles_hbs___default.a,
-    initialize() {
-        this.collection = new __WEBPACK_IMPORTED_MODULE_1__collections_Cards_js__["a" /* default */]();
-    },
     render() {
-        const self = this;
-        var a = [];
-        var b = [];
-        self.collection.fetch({
-
-            success(mod) {
-                self.collection.each((i, e) => {
-                    //  console.log(i, e)
-                    var c = i.attributes.cruise_line_name;
-                    a.push(c);
-                    var d = i.attributes.sailing_name;
-                    b.push(d);
-                });
-                self.$el.html(self.template({
-                    titles: a,
-                    names: b
-                }));
-            }
-        });
+        this.$el.html(this.template());
         return this;
     }
 
@@ -15857,14 +15857,22 @@ function showView(view) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__templates_partials_Footer_hbs__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__templates_partials_Footer_hbs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__templates_partials_Footer_hbs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_Total__ = __webpack_require__(41);
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = (Backbone.View.extend({
-     el: '#footer-wrapper',
-     template: __WEBPACK_IMPORTED_MODULE_0__templates_partials_Footer_hbs___default.a,
-     render() {
-          this.$el.html(this.template());
-     }
+    el: '#footer-wrapper',
+    template: __WEBPACK_IMPORTED_MODULE_0__templates_partials_Footer_hbs___default.a,
+    model: __WEBPACK_IMPORTED_MODULE_1__models_Total__["a" /* default */],
+    initialize() {
+        this.listenTo(this.model, 'reset change', this.render);
+    },
+    render() {
+        console.log(this.model.attributes);
+        var total = JSON.stringify(this.model.attributes.total);
+        this.$el.html(this.template(total));
+    }
 
 }));
 
@@ -15873,6 +15881,31 @@ function showView(view) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_backbone__);
+
+
+/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_backbone___default.a.Model.extend({
+
+    defaults: {
+        total: 0
+    },
+    validate: function (attrs, options) {
+        if (attrs.end < attrs.start) {
+            return "Can't end before it starts";
+        }
+    }
+
+}));
 
 /***/ })
 /******/ ]);
