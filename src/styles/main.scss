@@ -1,26 +1,16 @@
-$height100: 100%;
-$width100: 100%;
+$per100: 100%;
 $twofivevw: 2.5vw;
 $position: relative;
 $flex: flex;
+$white: white;
+$orange: #ff9900;
 body {
-    height: $height100;
-    width: $width100;
+    height: $per100;
+    width: $per100;
     background-color: #d6d6d6;
-}
-
-#cruise-card-wrapper {
-    display: $flex;
-    justify-content: space-evenly;
-}
-
-#cruise-card-container {
-    background: white;
-    width: 30%;
-}
-
-#cruise-card-container img {
-    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 
@@ -33,13 +23,13 @@ body {
 
 #cruise-card-title {
     display: inline;
-    width: $width100;
+    width: $per100;
     font-size: 3vw;
     font-weight: 600;
 }
 
 #cruise-card-sub-header {
-    font-size: 1.3vw;
+    font-size: 1.7vw;
     font-style: italic;
     margin: 0;
     padding: 0;
@@ -50,49 +40,42 @@ body {
 
 /*CARDS////////////////////////////////////*/
 
-.cruise-card-wrapper {
+#cruise-card-wrapper {
     display: $flex;
-    flex: wrap;
+    justify-content: space-evenly;
 }
 
-.cruise-card-container {
-    justify-content: space-between;
-    display: $flex;
+#cruise-card-container {
+    background: $white;
+    width: 26%;
+}
+
+#cruise-card-container img {
     width: 100%;
-    margin-top: 61px;
-    flex-direction: row;
-}
-
-.cruise-card-container article #container-bod-article .tile {
-    display: $flex;
-    flex-direction: column;
-    width: 300px;
-    max-width: 300px;
-    margin-right: 5px;
 }
 
 article {
-    background: #ffffff;
+    background: $white;
     border-radius: 2px;
     margin: 0 auto;
     overflow: auto;
     position: $position;
 }
 
-#container-bod-article-body {
+#cruise-bod-article-body {
     margin: 4%
 }
 
-.container-bod-article-heading {
+#cruise-bod-article-heading {
     color: #2f3032;
     font-size: $twofivevw;
     line-height: 1.5;
     font-weight: 600;
 }
 
-.container-bod-article-tags {
+#cruise-bod-article-tags {
     color: #313131;
-    font-size: 1vw;
+    font-size: 1.2vw;
 }
 
 input[type="radio"] {
@@ -125,15 +108,14 @@ ul {
     position: $position;
 }
 
-#container-bod-ribbon-wrapper {
+#cruise-bod-ribbon-wrapper {
     display: $flex;
-    // justify-content: flex-end;
 }
 
-#container-bod-ribbon-container {
+#cruise-bod-ribbon-container {
     color: black;
     position: $position;
-    left: 20%;
+    left: 16%;
     bottom: 52%;
     display: flex;
     justify-content: center;
@@ -142,43 +124,23 @@ ul {
     line-height: 8px;
 }
 
-#container-bod-ribbon-container img {
-    width: $width100;
+#cruise-bod-ribbon-container img {
+    width: $per100;
 }
 
-#container-bod-ribbon-container:before {
-    content: "";
-    height: 0;
-    width: 0;
+#cruise-bod-ribbon-container div {
     display: block;
+    padding: 1.4vw;
     position: absolute;
-    top: 3px;
-    left: 0;
-}
-
-#container-bod-ribbon-container:after {
-    content: "";
-    height: 3px;
-    display: block;
-    position: absolute;
-    bottom: -3px;
-    left: 58px;
-    right: 3px;
-}
-
-#container-bod-ribbon-container div {
-    display: block;
-    padding: 20px;
-    position: absolute;
-    background: #ff9900;
+    background: $orange;
     overflow: visible;
-    height: 49px;
+    height: 4vw;
     top: 11%;
     color: black;
     text-decoration: none;
 }
 
-#container-bod-ribbon-container div:after {
+#cruise-bod-ribbon-container div:after {
     content: "";
     height: 0;
     width: 0;
@@ -190,16 +152,17 @@ ul {
     border-right: 15px solid transparent;
 }
 
-.container-bod-starting {
+#cruise-bod-starting {
     font-family: inherit;
     bottom: 10px;
     right: 7px;
     position: $position;
-    font-size: 15px;
+    font-size: 1.4vw;
+    ;
     font-weight: 100;
 }
 
-.container-bod-cruise-price-ribbon {
+#cruise-bod-cruise-price-ribbon {
     font-size: 3.5vw;
     display: $flex;
     $flex-direction: column;
@@ -215,35 +178,40 @@ ul {
     display: $flex;
 }
 
-.container-bod-footer-wrapper {
-    width: $width100;
+#cruise-bod-footer-wrapper {
+    width: $per100;
+    justify-content: center;
+    display: $flex;
 }
 
-.container-bod-total-footer {
+#cruise-bod-total-footer {
     display: $flex;
     align-items: baseline;
     border-top: 3px solid gray;
     justify-content: space-between;
-    margin: 2%;
+    margin: 2.5%;
     font-weight: 600;
+    width: 89%;
 }
 
-.container-bod-total-txt {
+#cruise-bod-total-txt {
     font-size: $twofivevw;
     padding: 2.5%;
+    text-align: center;
+    width: 34%;
 }
 
-#container-bod-total-result-price {
+#cruise-bod-total-result-price {
     font-size: $twofivevw;
-    background-color: #ff9900;
+    background-color: $orange;
     padding: .5rem .5rem .5rem 2rem;
 }
 
 
 /*PRICE ELEMENTS//////////////////////////////////*/
 
-.container-bod-cruise-price-style {
-    color: #ff9900;
+#cruise-bod-cruise-price-style {
+    color: $orange;
     font-weight: 600;
 }
 
@@ -251,71 +219,224 @@ ul {
 /*MEDIA QUERIES/////////////////////////////*/
 
 
-/*IPAD*/
+/*TABLET*/
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1025px) {
+@media only screen and (min-width: 736px) and (max-width: 1025px) {
     #cruise-card-wrapper {
         flex-direction: column;
         flex-wrap: wrap;
         align-items: center;
     }
     #cruise-card-wrapper>* {
-        margin: 1%;
+        margin: 1.1%;
     }
     #cruise-card-container {
         display: flex;
         align-items: center;
-        width: 95%;
+        width: 89%;
     }
-    #container-bod-ribbon-container {
-        left: 57.5%;
+    #cruise-card-body {
+        width: 50%;
+    }
+    #cruise-bod-article-heading {
+        font-size: 4vw;
+        line-height: 1.5;
+        width: 100%;
+    }
+    #cruise-card-title {
+        font-size: 4vw;
+        margin: 1%;
+    }
+    #cruise-card-header {
+        padding: 2.5%;
+    }
+    #cruise-bod-article-tags {
+        color: #313131;
+        font-size: 2vw;
+    }
+    #cruise-card-sub-header {
+        font-size: 2vw;
+    }
+    #cruise-banner-image {
+        width: 37%
+    }
+    #cruise-bod-ribbon-container {
+        left: 53%;
         display: flex;
         right: 0%;
-        bottom: 0%
+        bottom: 0%;
+        padding-bottom: 24%;
     }
-    .container-bod {
-        width: 100%;
-        flex-direction: column;
+    #cruise-bod-article-body {
+        margin: 4%;
+        padding-left: 2%;
     }
-    .container-bod-1 {
-        padding: 40px 40px 0px 40px;
+    #radioBtn-wrapper {
+        margin: 4%;
     }
-    .container-bod-cruise-card-wrapper {
-        max-width: 100%;
+    li {
+        line-height: 1.5;
+        font-size: 2.3vw;
     }
-    .container-bod-cruise-cards {
-        flex-direction: column;
-    }
-    article.container-bod-article.tile {
-        flex-direction: row;
-        height: 273px;
-        width: 100%;
-        max-width: 100%;
-    }
-    footer {
+    #footer-wrapper {
         position: fixed;
-        background-color: white;
+        width: $per100;
+        height: $per100;
+        background: $white;
+    }
+    #footer-wrapper::before {
+        box-shadow: inset -1px 4px 13px -1px rgba(0, 0, 0, 0.75);
+    }
+    #cruise-bod-total-footer {
+        border-top: none;
+        margin: 0%;
+        width: $per100;
+        justify-content: space-evenly;
+    }
+    #cruise-bod-total-result-price {
+        font-size: 3.5vw;
+        padding: 0.5rem 0.5rem 0.5rem 7rem;
+    }
+    #cruise-bod-total-txt {
+        font-size: 3.5vw;
+        padding: 0;
+        text-align: left;
+        width: 68%;
     }
 }
 
 
-/*IPHONE 5*/
+/*MOBILE*/
 
-@media (max-width: 568px) {
-    .container-bod {
+@media only screen and (min-width: 320px) and (max-width: 735px) {
+    #cruise-card-wrapper {
+        display: block;
+        margin: 5%
+    }
+    #cruise-card-header {
+        margin: 7% 10% 0% 6%;
+        text-align: left;
+        padding: 0;
+    }
+    #cruise-card-title {
+        width: $per100;
+        font-size: 9vw;
+    }
+    #cruise-card-sub-header {
+        font-size: 3.7vw;
+    }
+    #cruise-card-container {
+        background: none;
+        width: $per100;
+    }
+    #radioBtn-wrapper {
+        margin: 0 0 9% 0;
+        padding: 4.5%;
+        background: $white;
+    }
+    #cruise-bod-cruise-price-style {
+        font-size: 4vw;
+    }
+    li {
+        font-size: 3.5vw;
+        line-height: 1.4;
+    }
+    #cruise-bod-ribbon-container:before {
+        content: none;
+    }
+    #cruise-bod-ribbon-container:after {
+        content: none;
+    }
+    #cruise-bod-ribbon-container div:after {
+        content: none;
+    }
+    #cruise-bod-starting {
+        font-family: inherit;
+        bottom: 10vw;
+        right: 5vw;
+        position: relative;
+        font-size: 4.4vw;
+        font-weight: 100;
+    }
+    #cruise-bod-cruise-price-ribbon {
+        left: 15vw;
+        font-size: 4.4vw;
+        display: flex;
+        position: relative;
+        bottom: 14.3vw;
+        margin-left: 3px;
+    }
+    #cruise-banner-image {
+        background: #eaeaea;
+        width: $per100;
+    }
+    #cruise-bod-ribbon-container div {
+        display: block;
+        padding: 0;
+        position: absolute;
+        background: none;
+        overflow: none;
+        height: 4vw;
+        top: 0;
+        color: black;
+        text-decoration: none;
+    }
+    #cruise-bod-article-heading {
+        font-size: 5.1vw;
+        line-height: 1.1;
+        margin-top: 4%;
         width: 100%;
     }
-    .container-bod-header-title {
-        display: block;
-        text-align: center;
-        font-size: 80px;
-        margin-top: 47px;
+    #cruise-bod-ribbon-wrapper {
+        display: inline-block;
+        width: 32%;
+        padding: 5%;
     }
-    .container-bod-cruise-cards {
-        flex-direction: column;
+    #cruise-bod-ribbon-container {
+        color: black;
+        position: relative;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        font-size: .8vw;
+        /* z-index: 100; */
+        line-height: inherit;
     }
-    .container-bod-header-inst-txt {
-        font-size: 33px;
+    #cruise-bod-article-tags {
+        font-size: 2.2vw;
+    }
+    #footer-wrapper {
+        height: 100%;
+        background: white;
+    }
+    #cruise-bod-total-footer {
+        margin: 0;
+        width: $per100;
+        align-items: flex-start;
+    }
+    #cruise-bod-total-txt {
+        font-size: 4vw;
+        padding: 1% 3.5%;
         text-align: left;
+        width: 44%;
+    }
+    #cruise-bod-total-result-price {
+        font-size: 8vw;
+        width: 46%;
+        height: 100%;
+        text-align: end;
+        padding: 0rem 2rem 0rem 1rem;
+    }
+}
+
+@media only screen and (max-width: 736px) and (min-width: 425px) {
+    #cruise-bod-article-body {
+        margin: -33% 14% 24% 45%;
+    }
+}
+
+@media only screen and (max-width: 424px) and (min-width: 320px) {
+    #cruise-bod-article-body {
+        margin: -33% 14% 19% 45%;
     }
 }

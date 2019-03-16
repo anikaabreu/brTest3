@@ -12944,11 +12944,11 @@ function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj);
 module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "\n<div class=\"container-bod-article-tags\">\n     "
+  return "\n<div id=\"cruise-bod-article-tags\">\n     "
     + alias4(((helper = (helper = helpers.cruise_line_name || (depth0 != null ? depth0.cruise_line_name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"cruise_line_name","hash":{},"data":data}) : helper)))
     + " - "
     + alias4(((helper = (helper = helpers.cruise_ship_name || (depth0 != null ? depth0.cruise_ship_name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"cruise_ship_name","hash":{},"data":data}) : helper)))
-    + "\n</div>\n\n<div class=\"container-bod-article-heading\">\n	"
+    + "\n</div>\n\n<div id=\"cruise-bod-article-heading\">\n	"
     + alias4(((helper = (helper = helpers.sailing_name || (depth0 != null ? depth0.sailing_name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"sailing_name","hash":{},"data":data}) : helper)))
     + "\n</div>\n";
 },"useData":true});
@@ -12971,12 +12971,12 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + ((stack1 = ((helper = (helper = helpers.sailing_price || (depth0 != null ? depth0.sailing_price : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"sailing_price","hash":{},"data":data}) : helper))) != null ? stack1 : "")
     + "\" />\n      \n      "
     + alias4(((helper = (helper = helpers.sailing_date || (depth0 != null ? depth0.sailing_date : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"sailing_date","hash":{},"data":data}) : helper)))
-    + "\n            \n        </span>\n\n        <span class=\"container-bod-cruise-price-style\" id=\"container-bod-cruise-price-1\">\n  "
+    + "\n            \n        </span>\n\n        <span id=\"cruise-bod-cruise-price-style\" id=\"cruise-bod-cruise-price-1\"><span>$</span> \n  "
     + alias4(((helper = (helper = helpers.sailing_price || (depth0 != null ? depth0.sailing_price : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"sailing_price","hash":{},"data":data}) : helper)))
     + "\n        </span>\n    </li>\n\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data,blockParams,depths) {
     var stack1, helper, options, buffer = 
-  "<ul class=\"container-bod-list-group\">\n";
+  "<ul id=\"cruise-bod-list-group\">\n";
   stack1 = ((helper = (helper = helpers.sailing_options || (depth0 != null ? depth0.sailing_options : depth0)) != null ? helper : helpers.helperMissing),(options={"name":"sailing_options","hash":{},"fn":container.program(1, data, 0, blockParams, depths),"inverse":container.noop,"data":data}),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),options) : helper));
   if (!helpers.sailing_options) { stack1 = helpers.blockHelperMissing.call(depth0,stack1,options)}
   if (stack1 != null) { buffer += stack1; }
@@ -14889,7 +14889,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 
   return "        <div id=\"cruise-card-container\" >\n           \n"
     + ((stack1 = container.invokePartial(__webpack_require__(34),depth0,{"name":"partials/Image_banner","data":data,"indent":"           ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
-    + " \n           <div id=\"cruise-card-body\">\n            <div id=\"container-bod-article-body\">\n"
+    + " \n           <div id=\"cruise-card-body\">\n            <div id=\"cruise-bod-article-body\">\n"
     + ((stack1 = container.invokePartial(__webpack_require__(10),depth0,{"name":"partials/Titles","data":data,"indent":"                ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
     + "            </div>\n            <div id=\"radioBtn-wrapper\">\n"
     + ((stack1 = container.invokePartial(__webpack_require__(11),depth0,{"name":"partials/Radiobtn","data":data,"indent":"           ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
@@ -15827,9 +15827,9 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {});
 
-  return "<div id=\"container-banner-image\">\n    <div id=\"container-bod-ribbon-wrapper\">\n        <img src=\""
+  return "<div id=\"cruise-banner-image\">\n    <div id=\"cruise-bod-ribbon-wrapper\">\n        <img src=\""
     + ((stack1 = ((helper = (helper = helpers.sailing_main_image || (depth0 != null ? depth0.sailing_main_image : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"sailing_main_image","hash":{},"data":data}) : helper))) != null ? stack1 : "")
-    + "\" alt=\"\">\n    \n    </div>\n</div>\n\n\n\n    <div id=\"container-bod-ribbon-container\">\n\n            <span>\n                <div id=\"container-bod-ribbon\">\n                    <span class=\"container-bod-starting\">Starting at</span>\n                    <span class=\"container-bod-cruise-price-ribbon\"><span>$</span> "
+    + "\" alt=\"\">\n    \n    </div>\n</div>\n\n\n\n    <div id=\"cruise-bod-ribbon-container\">\n\n            <span>\n                <div id=\"cruise-bod-ribbon\">\n                    <span id=\"cruise-bod-starting\">Starting at</span>\n                    <span id=\"cruise-bod-cruise-price-ribbon\"><span>$</span> "
     + ((stack1 = helpers.minP.call(alias1,depth0,(data && data.index),{"name":"minP","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "                    </span>\n            </span>\n        </div>\n        </div>";
 },"useData":true});
@@ -15841,9 +15841,9 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 var Handlebars = __webpack_require__(1);
 function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
 module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<div class=\"container-bod-footer-wrapper\">\n	<footer class=\"container-bod-total-footer\">\n		<div class=\"container-bod-total-txt\">\n			Your Selected Sailings Total\n		</div>\n		<span id=\"container-bod-total-result-price\">$ "
+    return "<div id=\"cruise-bod-footer-wrapper\">\n	<footer id=\"cruise-bod-total-footer\">\n		<div id=\"cruise-bod-total-txt\">\n			<span>Your Selected Sailings Total</span>\n				\n		</div>\n		<span id=\"cruise-bod-total-result-price\">$ "
     + container.escapeExpression(container.lambda(depth0, depth0))
-    + "</span>\n	</footer>\n</div>";
+    + "</span>\n	</footer>\n</div>\n";
 },"useData":true});
 
 /***/ }),
