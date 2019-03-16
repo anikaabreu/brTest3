@@ -1,17 +1,16 @@
 $height100: 100%;
 $width100: 100%;
+$twofivevw: 2.5vw;
+$position: relative;
+$flex: flex;
 body {
     height: $height100;
     width: $width100;
     background-color: #d6d6d6;
 }
 
-#app {
-    // display: flex;
-}
-
 #cruise-card-wrapper {
-    display: flex;
+    display: $flex;
     justify-content: space-evenly;
 }
 
@@ -28,19 +27,19 @@ body {
 /*// HEADER////////////////////////////////////*/
 
 #cruise-card-header {
-    position: relative;
+    position: $position;
     padding: 2.7%;
 }
 
 #cruise-card-title {
     display: inline;
-    width: 100%;
-    font-size: 3.5vw;
+    width: $width100;
+    font-size: 3vw;
     font-weight: 600;
 }
 
 #cruise-card-sub-header {
-    font-size: 22px;
+    font-size: 1.3vw;
     font-style: italic;
     margin: 0;
     padding: 0;
@@ -51,25 +50,21 @@ body {
 
 /*CARDS////////////////////////////////////*/
 
-.container-bod-card {
-    margin: 20px;
-}
-
 .cruise-card-wrapper {
-    display: flex;
+    display: $flex;
     flex: wrap;
 }
 
 .cruise-card-container {
     justify-content: space-between;
-    display: flex;
+    display: $flex;
     width: 100%;
     margin-top: 61px;
     flex-direction: row;
 }
 
 .cruise-card-container article #container-bod-article .tile {
-    display: flex;
+    display: $flex;
     flex-direction: column;
     width: 300px;
     max-width: 300px;
@@ -81,45 +76,41 @@ article {
     border-radius: 2px;
     margin: 0 auto;
     overflow: auto;
-    position: relative;
+    position: $position;
 }
 
 #container-bod-article-body {
-    margin: 3%
+    margin: 4%
 }
 
 .container-bod-article-heading {
     color: #2f3032;
-    font-size: 28.4px;
+    font-size: $twofivevw;
     line-height: 1.5;
     font-weight: 600;
 }
 
 .container-bod-article-tags {
     color: #313131;
-    font-size: 3.4vmin;
+    font-size: 1vw;
 }
 
 input[type="radio"] {
     margin: 5px;
 }
 
-#radioBtnwrapper {
-    margin: 3%
+#radioBtn-wrapper {
+    margin: 4%
 }
 
 li {
     list-style-type: none;
-    display: flex;
+    display: $flex;
     justify-content: space-between;
     margin: 0;
     padding: 0;
     line-height: 2;
-    font-size: 16px;
-}
-
-.container-bod-list-group {
-    margin-top: 7px;
+    font-size: 1.2vw;
 }
 
 ul {
@@ -130,28 +121,29 @@ ul {
 
 /*RIBBON////////////////////////////////////////*/
 
-#container-banner-image {
-    width: 100%;
+#bannerImg {
+    position: $position;
 }
 
 #container-bod-ribbon-wrapper {
-    display: flex;
-    justify-content: flex-end;
-    height: 100vh;
+    display: $flex;
+    // justify-content: flex-end;
 }
 
 #container-bod-ribbon-container {
     color: black;
-    position: relative;
-    // right: -16px;
-    width: 33%;
+    position: $position;
+    left: 20%;
+    bottom: 52%;
+    display: flex;
+    justify-content: center;
     font-size: .8vw;
     z-index: 100;
     line-height: 8px;
 }
 
 #container-bod-ribbon-container img {
-    width: 100%;
+    width: $width100;
 }
 
 #container-bod-ribbon-container:before {
@@ -177,15 +169,13 @@ ul {
 #container-bod-ribbon-container div {
     display: block;
     padding: 20px;
-    position: relative;
+    position: absolute;
     background: #ff9900;
     overflow: visible;
     height: 49px;
-    left: 9%;
-    top: 9%
+    top: 11%;
     color: black;
     text-decoration: none;
-    font-family: inherit;
 }
 
 #container-bod-ribbon-container div:after {
@@ -204,15 +194,15 @@ ul {
     font-family: inherit;
     bottom: 10px;
     right: 7px;
-    position: inherit;
+    position: $position;
     font-size: 15px;
     font-weight: 100;
 }
 
 .container-bod-cruise-price-ribbon {
-    font-size: 51px;
-    display: flex;
-    flex-direction: column;
+    font-size: 3.5vw;
+    display: $flex;
+    $flex-direction: column;
     font-weight: 900;
     line-height: .9;
     margin-left: 3px;
@@ -221,29 +211,30 @@ ul {
 
 /*FOOTER//////////////////////////////////////*/
 
+#footer-wrapper {
+    display: $flex;
+}
+
 .container-bod-footer-wrapper {
-    height: auto;
-    width: auto;
-    align-content: space-between;
+    width: $width100;
 }
 
 .container-bod-total-footer {
-    display: flex;
-    align-items: center;
+    display: $flex;
+    align-items: baseline;
     border-top: 3px solid gray;
     justify-content: space-between;
-    padding: 31px 0;
-    margin: 22px 0;
-    width: 100%;
+    margin: 2%;
     font-weight: 600;
 }
 
 .container-bod-total-txt {
-    font-size: 35px;
+    font-size: $twofivevw;
+    padding: 2.5%;
 }
 
 #container-bod-total-result-price {
-    font-size: 34px;
+    font-size: $twofivevw;
     background-color: #ff9900;
     padding: .5rem .5rem .5rem 2rem;
 }
@@ -263,6 +254,25 @@ ul {
 /*IPAD*/
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1025px) {
+    #cruise-card-wrapper {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    #cruise-card-wrapper>* {
+        margin: 1%;
+    }
+    #cruise-card-container {
+        display: flex;
+        align-items: center;
+        width: 95%;
+    }
+    #container-bod-ribbon-container {
+        left: 57.5%;
+        display: flex;
+        right: 0%;
+        bottom: 0%
+    }
     .container-bod {
         width: 100%;
         flex-direction: column;

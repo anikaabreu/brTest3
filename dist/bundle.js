@@ -14889,11 +14889,11 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 
   return "        <div id=\"cruise-card-container\" >\n           \n"
     + ((stack1 = container.invokePartial(__webpack_require__(34),depth0,{"name":"partials/Image_banner","data":data,"indent":"           ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
-    + " \n           \n            <div id=\"container-bod-article-body\">\n"
+    + " \n           <div id=\"cruise-card-body\">\n            <div id=\"container-bod-article-body\">\n"
     + ((stack1 = container.invokePartial(__webpack_require__(10),depth0,{"name":"partials/Titles","data":data,"indent":"                ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
     + "            </div>\n            <div id=\"radioBtn-wrapper\">\n"
     + ((stack1 = container.invokePartial(__webpack_require__(11),depth0,{"name":"partials/Radiobtn","data":data,"indent":"           ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
-    + "            </div>\n        </div>\n      \n";
+    + "            </div>\n            </div>\n        </div>\n      \n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
@@ -15821,17 +15821,17 @@ function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj);
 module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
     var helper;
 
-  return "									$"
+  return "\n                        "
     + container.escapeExpression(((helper = (helper = helpers.sailing_price || (depth0 != null ? depth0.sailing_price : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"sailing_price","hash":{},"data":data}) : helper)))
-    + "\n									";
+    + "\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {});
 
-  return "<div id=\"container-banner-image\" style=\"background-image: url('"
+  return "<div id=\"container-banner-image\">\n    <div id=\"container-bod-ribbon-wrapper\">\n        <img src=\""
     + ((stack1 = ((helper = (helper = helpers.sailing_main_image || (depth0 != null ? depth0.sailing_main_image : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"sailing_main_image","hash":{},"data":data}) : helper))) != null ? stack1 : "")
-    + "'); background-size: cover; background-repeat: no-repeat no-repeat; height: 100%;\n    width: 100%;\">\n<div id=\"container-bod-ribbon-wrapper\">\n<div id=\"container-bod-ribbon-container\">\n    <div id=\"container-bod-ribbon\">\n        <span class=\"container-bod-starting\">Starting at</span>\n        <span class=\"container-bod-cruise-price-ribbon\">\n"
+    + "\" alt=\"\">\n    \n    </div>\n</div>\n\n\n\n    <div id=\"container-bod-ribbon-container\">\n\n            <span>\n                <div id=\"container-bod-ribbon\">\n                    <span class=\"container-bod-starting\">Starting at</span>\n                    <span class=\"container-bod-cruise-price-ribbon\"><span>$</span> "
     + ((stack1 = helpers.minP.call(alias1,depth0,(data && data.index),{"name":"minP","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "</span>\n    </div>\n</div>\n</div>\n</div>\n";
+    + "                    </span>\n            </span>\n        </div>\n        </div>";
 },"useData":true});
 
 /***/ }),
@@ -15841,7 +15841,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 var Handlebars = __webpack_require__(1);
 function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
 module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<div class=\"container-bod-footer-wrapper\">\n	<footer class=\"container-bod-total-footer\">\n		<div class=\"container-bod-total-txt\">\n			Your Selected Sailings Total\n		</div>\n		<span id=\"container-bod-total-result-price\">$"
+    return "<div class=\"container-bod-footer-wrapper\">\n	<footer class=\"container-bod-total-footer\">\n		<div class=\"container-bod-total-txt\">\n			Your Selected Sailings Total\n		</div>\n		<span id=\"container-bod-total-result-price\">$ "
     + container.escapeExpression(container.lambda(depth0, depth0))
     + "</span>\n	</footer>\n</div>";
 },"useData":true});

@@ -1,14 +1,21 @@
-<div id="container-banner-image" style="background-image: url('{{{sailing_main_image}}}'); background-size: cover; background-repeat: no-repeat no-repeat; height: 100%;
-    width: 100%;">
-<div id="container-bod-ribbon-wrapper">
-<div id="container-bod-ribbon-container">
-    <div id="container-bod-ribbon">
-        <span class="container-bod-starting">Starting at</span>
-        <span class="container-bod-cruise-price-ribbon">
-								{{#minP this @index}}
-									${{sailing_price}}
-									{{/minP}}</span>
+<div id="container-banner-image">
+    <div id="container-bod-ribbon-wrapper">
+        <img src="{{{sailing_main_image}}}" alt="">
+    
     </div>
 </div>
-</div>
-</div>
+
+
+
+    <div id="container-bod-ribbon-container">
+
+            <span>
+                <div id="container-bod-ribbon">
+                    <span class="container-bod-starting">Starting at</span>
+                    <span class="container-bod-cruise-price-ribbon"><span>$</span> {{#minP this @index}}
+                        {{sailing_price}}
+                        {{/minP}}
+                    </span>
+            </span>
+        </div>
+        </div>

@@ -26,11 +26,11 @@ body {
 #cruise-card-title {
   display: inline;
   width: 100%;
-  font-size: 3.5vw;
+  font-size: 3vw;
   font-weight: 600; }
 
 #cruise-card-sub-header {
-  font-size: 22px;
+  font-size: 1.3vw;
   font-style: italic;
   margin: 0;
   padding: 0;
@@ -38,9 +38,6 @@ body {
   color: #444540; }
 
 /*CARDS////////////////////////////////////*/
-.container-bod-card {
-  margin: 20px; }
-
 .cruise-card-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -82,22 +79,24 @@ article {
   overflow: auto;
   position: relative; }
 
-.container-bod-article-body {
-  padding: 11px 13px 19px;
-  padding-right: 20px; }
+#container-bod-article-body {
+  margin: 4%; }
 
 .container-bod-article-heading {
   color: #2f3032;
-  font-size: 28.4px;
+  font-size: 2.5vw;
   line-height: 1.5;
   font-weight: 600; }
 
 .container-bod-article-tags {
   color: #313131;
-  font-size: 12.4px; }
+  font-size: 1vw; }
 
 input[type="radio"] {
   margin: 5px; }
+
+#radioBtn-wrapper {
+  margin: 4%; }
 
 li {
   list-style-type: none;
@@ -110,31 +109,32 @@ li {
   margin: 0;
   padding: 0;
   line-height: 2;
-  font-size: 16px; }
-
-.container-bod-list-group {
-  margin-top: 7px; }
+  font-size: 1.2vw; }
 
 ul {
   margin: 0;
   padding: 0; }
 
 /*RIBBON////////////////////////////////////////*/
-#container-banner-image {
-  width: 100%; }
+#bannerImg {
+  position: relative; }
 
 #container-bod-ribbon-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end; }
+  display: flex; }
 
 #container-bod-ribbon-container {
   color: black;
   position: relative;
-  width: 33%;
+  left: 20%;
+  bottom: 52%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: .8vw;
   z-index: 100;
   line-height: 8px; }
@@ -163,15 +163,13 @@ ul {
 #container-bod-ribbon-container div {
   display: block;
   padding: 20px;
-  position: relative;
+  position: absolute;
   background: #ff9900;
   overflow: visible;
   height: 49px;
-  left: 9%;
-  top: 54%;
+  top: 11%;
   color: black;
-  text-decoration: none;
-  font-family: inherit; }
+  text-decoration: none; }
 
 #container-bod-ribbon-container div:after {
   content: "";
@@ -188,51 +186,48 @@ ul {
   font-family: inherit;
   bottom: 10px;
   right: 7px;
-  position: inherit;
+  position: relative;
   font-size: 15px;
   font-weight: 100; }
 
 .container-bod-cruise-price-ribbon {
-  font-size: 51px;
+  font-size: 3.5vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
   font-weight: 900;
   line-height: .9;
   margin-left: 3px; }
 
 /*FOOTER//////////////////////////////////////*/
+#footer-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
 .container-bod-footer-wrapper {
-  height: auto;
-  width: auto;
-  -ms-flex-line-pack: justify;
-  align-content: space-between; }
+  width: 100%; }
 
 .container-bod-total-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
   border-top: 3px solid gray;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 31px 0;
-  margin: 22px 0;
-  width: 100%;
+  margin: 2%;
   font-weight: 600; }
 
 .container-bod-total-txt {
-  font-size: 35px; }
+  font-size: 2.5vw;
+  padding: 2.5%; }
 
 #container-bod-total-result-price {
-  font-size: 34px;
+  font-size: 2.5vw;
   background-color: #ff9900;
   padding: .5rem .5rem .5rem 2rem; }
 
@@ -244,6 +239,33 @@ ul {
 /*MEDIA QUERIES/////////////////////////////*/
 /*IPAD*/
 @media only screen and (min-device-width: 768px) and (max-device-width: 1025px) {
+  #cruise-card-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  #cruise-card-wrapper > * {
+    margin: 1%; }
+  #cruise-card-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 95%; }
+  #container-bod-ribbon-container {
+    left: 57.5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    right: 0%;
+    bottom: 0%; }
   .container-bod {
     width: 100%;
     -webkit-box-orient: vertical;
